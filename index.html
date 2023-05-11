@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="ja" >
+<html lang="ja">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- フロートbtn フォント -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.4/css/all.css" />
-    <link rel="stylesheet" href="/assets/style.css">
+    <link rel="stylesheet" href="/assets//css/style.css" />
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
@@ -20,52 +20,50 @@
     <title>マッハGoGoクリニック</title>
     <meta name="description" content="" />
 
-
     <!-- <link rel="dns-prefetch" href="https://maxcdn.bootstrapcdn.com" /> -->
     <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
 
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js?ver=6.2" id="bootstrap-js-js"></script>
-
-
   </head>
   <body>
-    <div class="spmenu">
-      <div class="spmenu_container">
-        <a href="index.html">
-          <div class="sp-nav-log">
+    <div class="sp-menu">
+      <div class="sp-menu__container">
+        <a href="index.html" class="sp-nav__logo-link">
+          <div class="sp-nav__logo">
             <img src="https://placehold.jp/240x23.png" width="240" height="23" alt="ロゴの画像" />
           </div>
         </a>
-        <ul class="sp-nav-li">
-          <li><a href="index.html">クリニックTOP</a></li>
-          <li><a href="about/index.html">診療内容</a></li>
-          <li><a href="faq/index.html">よくある質問</a></li>
-          <li><a href="news/index.html">お知らせ</a></li>
-          <li><a href="blogs/index.html">お役立ち記事</a></li>
-          <li><a href="access/index.html">アクセス</a></li>
-          <li><a href="https://lin.ee/dMpoXjs">お問い合わせ</a></li>
+        <ul class="sp-nav__list">
+          <li class="sp-nav__item"><a href="index.html" class="sp-nav__link">クリニックTOP</a></li>
+          <li class="sp-nav__item"><a href="about/index.html" class="sp-nav__link">診療内容</a></li>
+          <li class="sp-nav__item"><a href="faq/index.html" class="sp-nav__link">よくある質問</a></li>
+          <li class="sp-nav__item"><a href="news/index.html" class="sp-nav__link">お知らせ</a></li>
+          <li class="sp-nav__item"><a href="blogs/index.html" class="sp-nav__link">お役立ち記事</a></li>
+          <li class="sp-nav__item"><a href="access/index.html" class="sp-nav__link">アクセス</a></li>
+          <li class="sp-nav__item"><a href="https://lin.ee/dMpoXjs" class="sp-nav__link">お問い合わせ</a></li>
         </ul>
-        <div class="js-close">
-          <span class="batsu"><img src="https://placehold.jp/150x150.png" /></span>
+        <div class="close js-close">
+          <span class="close__icon"><img src="https://placehold.jp/150x150.png" /></span>
         </div>
       </div>
     </div>
-    <div class="footer_box">
-      <div class="footer_flx">
-        <div class="menu js-spmenu"><img src="https://placehold.jp/150x150.png" /></div>
-        <div class="page_bottom">
-          <a href="https://zero-machi.com/clinics/zmcl/appointments/new">
-            <div class="page_bottom_tex">予約枠を確認・予約する</div>
+    <div class="footer-box">
+      <div class="footer__flex">
+        <div class="menu-toggle js-spmenu"><img src="https://placehold.jp/150x150.png" /></div>
+        <div class="page-bottom">
+          <a href="#" class="page-bottom__link">
+            <div class="page-bottom__text">予約枠を確認・予約する</div>
           </a>
         </div>
       </div>
     </div>
+
     <script>
       $(".js-spmenu").on("click", function () {
-        $(".spmenu").addClass("is-open");
+        $(".sp-menu").addClass("is_open");
       });
       $(".js-close").on("click", function () {
-        $(".spmenu").removeClass("is-open");
+        $(".sp-menu").removeClass("is_open");
       });
       $(function () {
         var scrollPosition;
@@ -79,453 +77,495 @@
         });
       });
     </script>
+
     <section id="top">
-      <div class="container_hed_nav">
-        <div class="hed_flx">
-          <div class="hed1">
-            <a href="/">
-              <div class="top_logo_box">
+      <div class="container-header__nav">
+        <div class="header__flex">
+          <div class="header-logo">
+            <a href="/" class="header-logo__link">
+              <div class="top-logo__box">
                 <div><img src="https://placehold.jp/240x23.png" width="240" height="23" alt="ロゴの画像" /></div>
               </div>
             </a>
-            <h5 class="hed_pc">兵庫県西脇市黒田庄123-5 大国神社前</h5>
+            <h5 class="header__address">兵庫県西脇市黒田庄123-5 大国神社前</h5>
           </div>
-          <div class="hed2">
-            <ul>
-              <li><a href="#">診療内容</a></li>
-              <li><a href="#">よくある質問</a></li>
-              <li><a href="#">お知らせ</a></li>
-              <li><a href="#">お役立ち記事</a></li>
-              <li><a href="#">アクセス</a></li>
-              <li><a href="#">お問い合わせ</a></li>
+          <div class="header-navigation">
+            <ul class="header-nav__list">
+              <li class="header-nav__item"><a href="#" class="header-nav__link">診療内容</a></li>
+              <li class="header-nav__item"><a href="#" class="header-nav__link">よくある質問</a></li>
+              <li class="header-nav__item"><a href="#" class="header-nav__link">お知らせ</a></li>
+              <li class="header-nav__item"><a href="#" class="header-nav__link">お役立ち記事</a></li>
+              <li class="header-nav__item"><a href="#" class="header-nav__link">アクセス</a></li>
+              <li class="header-nav__item"><a href="#" class="header-nav__link">お問い合わせ</a></li>
             </ul>
           </div>
         </div>
       </div>
     </section>
-    <header>
+
+    <header class="header">
       <div class="container-front">
-        <div class="front-tex">
-          <p class="top-main-text">音速で帰ろう</p>
-          <div class="front-tex-second-sentence">当院は熱がある、お腹が痛い、鼻水など体に不調のある方が、<span class="bakcolor">忙しい日常の合間</span>に気軽に予約・受診できることを目指します。</div>
+        <div class="front-text">
+          <p class="front-text__main">音速で帰ろう</p>
+          <div class="front-text__secondary">
+            当院は熱がある、お腹が痛い、鼻水など体に不調のある方が、
+            <span class="highlight">忙しい日常の合間</span>
+            に気軽に予約・受診できることを目指します。
+          </div>
         </div>
-        <a href="#" class="front-btn2">
-          <div class="front-btn">
-            <div class="reservation">・予約する<br />・予約確認</div>
+        <a href="#" class="front-button__link">
+          <div class="front-button">
+            <div class="reservation-text">・予約する<br />・予約確認</div>
           </div>
         </a>
       </div>
     </header>
-    <div class="container">
+
+    <section class="container">
       <div class="covid19-attention">
         <p class="attention-title">発熱等、風邪症状のある方</p>
         <p>お電話でのご連絡は診療の妨げとなり、大変迷惑なので、おやめください。</p>
         <p><a class="covid19-reservation-link" href="#">こちら</a>を参照ください。</p>
       </div>
-      <section id="reservation">
+
+      <div id="reservation">
         <h2>本日の診療状況</h2>
         <div class="border"></div>
-        <div class="reservation_box">
-          <div class="background_image">
-            <img src="https://placehold.jp/300x77.png" alt="予約セル表" class="background_image_seru" />
-            <div class="status1"><img src="https://placehold.jp/cc9999/993333/150x150.png" alt="9:00-12:00" /></div>
-            <div class="status2"><img src="https://placehold.jp/cc9999/993333/150x150.png" alt="12:00-14:00" /></div>
-            <div class="status3"><img src="https://placehold.jp/cc9999/993333/150x150.png" alt="15:00-19:00" /></div>
-            <div class="status4"><img src="https://placehold.jp/cc9999/993333/150x150.png" alt="19:00-20:00" /></div>
+        <div class="reservation-box">
+          <div class="background-image">
+            <img src="https://placehold.jp/300x77.png" alt="予約セル表" class="background-image-cell" />
+            <div class="status"><img src="https://placehold.jp/cc9999/993333/150x150.png" alt="9:00-12:00" /></div>
+            <div class="status"><img src="https://placehold.jp/cc9999/993333/150x150.png" alt="12:00-14:00" /></div>
+            <div class="status"><img src="https://placehold.jp/cc9999/993333/150x150.png" alt="15:00-19:00" /></div>
+            <div class="status"><img src="https://placehold.jp/cc9999/993333/150x150.png" alt="19:00-20:00" /></div>
           </div>
         </div>
-      </section>
-    </div>
-    <div class="container-medical-content">
-      <section id="medical-content">
+      </div>
+    </section>
+
+    <section id="medical">
+      <div class="medical-content container inner">
         <h2>診療内容</h2>
         <div class="border"></div>
-        <div class="medical-content-flx">
-          <div class="medical-content-box">
+        <div class="medical-content__flex">
+          <div class="medical-content__item">
             <a href="#">
-              <div class="medical-content-box-content">
-                <div class="medical-content-box-img"><img src="https://placehold.jp/cc9999/993333/72x72.png" width="72" height="72" alt="" /></div>
-                <div class="medical-content-box-tex">一般内科<br />（風邪・花粉症など）</div>
+              <div class="item-content">
+                <div class="item-content__img"><img src="https://placehold.jp/cc9999/993333/72x72.png" width="72" height="72" alt="" /></div>
+                <div class="item-content__text">一般内科<br />（風邪・花粉症など）</div>
               </div>
             </a>
           </div>
-          <div class="medical-content-box">
+          <div class="medical-content__item">
             <a href="#">
-              <div class="medical-content-box-content">
-                <div class="medical-content-box-img"><img src="https://placehold.jp/cc9999/993333/72x72.png" width="72" height="72" alt="" /></div>
-                <div class="medical-content-box-tex">ピル</div>
+              <div class="item-content">
+                <div class="item-content__img"><img src="https://placehold.jp/cc9999/993333/72x72.png" width="72" height="72" alt="" /></div>
+                <div class="item-content__text">ピル</div>
               </div>
             </a>
           </div>
-          <div class="medical-content-box">
+          <div class="medical-content__item">
             <a href="#">
-              <div class="medical-content-box-content">
-                <div class="medical-content-box-img"><img src="https://placehold.jp/cc9999/993333/72x72.png" width="72" height="72" alt="" /></div>
-                <div class="medical-content-box-tex">月経・妊娠・オリモノ</div>
+              <div class="item-content">
+                <div class="item-content__img"><img src="https://placehold.jp/cc9999/993333/72x72.png" width="72" height="72" alt="" /></div>
+                <div class="item-content__text">月経・妊娠・オリモノ</div>
               </div>
             </a>
           </div>
-          <div class="medical-content-box">
+          <div class="medical-content__item">
             <a href="#">
-              <div class="medical-content-box-content">
-                <div class="medical-content-box-img"><img src="https://placehold.jp/cc9999/993333/72x72.png" width="72" height="72" alt="" /></div>
-                <div class="medical-content-box-tex">HPVワクチン<br />(子宮頸がんワクチン)</div>
+              <div class="item-content">
+                <div class="item-content__img"><img src="https://placehold.jp/cc9999/993333/72x72.png" width="72" height="72" alt="" /></div>
+                <div class="item-content__text">HPVワクチン<br />(子宮頸がんワクチン)</div>
               </div>
             </a>
           </div>
-          <div class="medical-content-box">
+          <div class="medical-content__item">
             <a href="#">
-              <div class="medical-content-box-content">
-                <div class="medical-content-box-img"><img src="https://placehold.jp/cc9999/993333/72x72.png" width="72" height="72" alt="" /></div>
-                <div class="medical-content-box-tex">ブライダルチェック</div>
+              <div class="item-content">
+                <div class="item-content__img"><img src="https://placehold.jp/cc9999/993333/72x72.png" width="72" height="72" alt="" /></div>
+                <div class="item-content__text">ブライダルチェック</div>
               </div>
             </a>
           </div>
-          <div class="medical-content-box">
+          <div class="medical-content__item">
             <a href="#">
-              <div class="medical-content-box-content">
-                <div class="medical-content-box-img"><img src="https://placehold.jp/cc9999/993333/72x72.png" width="72" height="72" alt="" /></div>
-                <div class="medical-content-box-tex">アフターピル</div>
+              <div class="item-content">
+                <div class="item-content__img"><img src="https://placehold.jp/cc9999/993333/72x72.png" width="72" height="72" alt="" /></div>
+                <div class="item-content__text">アフターピル</div>
               </div>
             </a>
           </div>
         </div>
-      </section>
-    </div>
-    <div class="container">
-      <section id="value">
+      </div>
+    </section>
+
+    <section id="value">
+      <div class="container">
         <h2>当院の提供価値</h2>
         <div class="border"></div>
-        <div class="value_box">
-          <div class="value_flx">
-            <div><img src="https://placehold.jp/cc9999/993333/106x106.png" width="106" height="106" alt="" /></div>
-            <div class="value-1"><h3>紙の診察券なし スマホで受付</h3></div>
+        <div class="value-container">
+          <div class="value-item">
+            <div class="value-item__img"><img src="https://placehold.jp/cc9999/993333/106x106.png" width="106" height="106" alt="" /></div>
+            <div class="value-item__text"><h3>紙の診察券なし スマホで受付</h3></div>
           </div>
-          <div class="value_flx">
-            <div><img src="https://placehold.jp/cc9999/993333/106x106.png" width="106" height="106" alt="" /></div>
-            <div class="value-2"><h3>キャッシュレス決済OK</h3></div>
+          <div class="value-item">
+            <div class="value-item__img"><img src="https://placehold.jp/cc9999/993333/106x106.png" width="106" height="106" alt="" /></div>
+            <div class="value-item__text"><h3>キャッシュレス決済OK</h3></div>
           </div>
-          <div class="value_flx">
-            <div><img src="https://placehold.jp/cc9999/993333/106x106.png" width="106" height="106" alt="" /></div>
-            <div class="value-3"><h3>診察室を出たら そのまま薬局へ</h3></div>
+          <div class="value-item">
+            <div class="value-item__img"><img src="https://placehold.jp/cc9999/993333/106x106.png" width="106" height="106" alt="" /></div>
+            <div class="value-item__text"><h3>診察室を出たら そのまま薬局へ</h3></div>
           </div>
-          <div class="value_flx">
-            <div><img src="https://placehold.jp/cc9999/993333/106x106.png" width="106" height="106" alt="" /></div>
-            <div class="value-4"><h3>薬局とも待ち時間削減の連携が可能に</h3></div>
+          <div class="value-item">
+            <div class="value-item__img"><img src="https://placehold.jp/cc9999/993333/106x106.png" width="106" height="106" alt="" /></div>
+            <div class="value-item__text"><h3>薬局とも待ち時間削減の連携が可能に</h3></div>
           </div>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
+
     <section id="features">
-      <h2>当院の特徴</h2>
-      <div class="border"></div>
-      <div class="section">
-        <div class="sliderArea">
-          <div class="full-screen slider">
-            <div>
-              <img src="https://placehold.jp/cc9999/993333/640x360.png" alt="125naroom" />
-              <div class="sliderArea-tex3">小さいけれど安らぐ</div>
-              <div class="sliderArea-texp">アフターコロナに相応しく、対人接触の少ない待合室</div>
-            </div>
-            <div>
-              <img src="https://placehold.jp/cc9999/993333/640x360.png" alt="125naroom" />
-              <div class="sliderArea-tex3">忙しい、オフィスワーカーの方向け</div>
-              <div class="sliderArea-texp">カンタン予約や事前問診など、時間のムダを省くしくみ</div>
-            </div>
-            <div>
-              <img src="https://placehold.jp/cc9999/993333/640x360.png" alt="125naroom" />
-              <div class="sliderArea-tex3">通院のハードルが低い</div>
-              <div class="sliderArea-texp">駅直結のビル内にあって通いやすく、24時間予約できる</div>
-            </div>
-            <div>
-              <img src="https://placehold.jp/cc9999/993333/640x360.png" alt="125naroom" />
-              <div class="sliderArea-tex3">行きたい時間に、行ける</div>
-              <div class="sliderArea-texp">ランチタイムにも行ける。土日祝OK。夜も20時まで</div>
+      <div class="container inner">
+        <h2>当院の特徴</h2>
+        <div class="border"></div>
+        <div class="section">
+          <div class="slider-area">
+            <div class="full-screen slider">
+              <div class="slide">
+                <img src="https://placehold.jp/cc9999/993333/640x360.png" alt="125naroom" />
+                <div class="slide-title">小さいけれど安らぐ</div>
+                <div class="slide-description">アフターコロナに相応しく、対人接触の少ない待合室</div>
+              </div>
+              <div class="slide">
+                <img src="https://placehold.jp/cc9999/993333/640x360.png" alt="125naroom" />
+                <div class="slide-title">忙しい、オフィスワーカーの方向け</div>
+                <div class="slide-description">カンタン予約や事前問診など、時間のムダを省くしくみ</div>
+              </div>
+              <div class="slide">
+                <img src="https://placehold.jp/cc9999/993333/640x360.png" alt="125naroom" />
+                <div class="slide-title">通院のハードルが低い</div>
+                <div class="slide-description">駅直結のビル内にあって通いやすく、24時間予約できる</div>
+              </div>
+              <div class="slide">
+                <img src="https://placehold.jp/cc9999/993333/640x360.png" alt="125naroom" />
+                <div class="slide-title">行きたい時間に、行ける</div>
+                <div class="slide-description">ランチタイムにも行ける。土日祝OK。夜も20時まで</div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <div class="container">
-      <section id="medical">
+
+    <section id="medical">
+      <div class="container inner">
         <h2>診療の流れ</h2>
         <div class="border"></div>
-        <div class="medicalpc_fix">
-          <div class="medical_flx">
-            <div class="medical_pcno">1</div>
+        <div class="medical-steps">
+          <div class="medical-step">
+            <div class="step-number__pc">1</div>
             <div><img src="https://placehold.jp/cc9999/993333/106x85.png" width="106" height="85" alt="" class="img" /></div>
-            <div class="medical_box">
-              <div class="medical_box2">
-                <div class="medical_no">1</div>
-                <div class="texpc">スマホで予約</div>
+            <div class="step-content">
+              <div class="step-title">
+                <div class="step-number__sp">1</div>
+                <div class="step-text">スマホで予約</div>
               </div>
               <p>予約はスマホで簡単に。<br />オンラインのみの受付です。</p>
             </div>
           </div>
-          <div class="medical_flx">
-            <div class="medical_pcno">2</div>
+          <div class="medical-step">
+            <div class="step-number__pc">2</div>
             <div><img src="https://placehold.jp/cc9999/993333/106x85.png" width="106" height="85" alt="" class="img" /></div>
-            <div class="medical_box">
-              <div class="medical_box2">
-                <div class="medical_no">2</div>
-                <div class="texpc">来院</div>
+            <div class="step-content">
+              <div class="step-title">
+                <div class="step-number__sp">2</div>
+                <div class="step-text">来院</div>
               </div>
               <p>診療の待ち時間を最少でご案内。院外のカフェなどでもお待ちいただけます。</p>
             </div>
           </div>
-          <div class="medical_flx">
-            <div class="medical_pcno">3</div>
+          <div class="medical-step">
+            <div class="step-number__pc">3</div>
             <div><img src="https://placehold.jp/cc9999/993333/106x85.png" width="106" height="85" alt="" class="img" /></div>
-            <div class="medical_box">
-              <div class="medical_box2">
-                <div class="medical_no">3</div>
-                <div class="texpc">診察</div>
+            <div class="step-content">
+              <div class="step-title">
+                <div class="step-number_sp">3</div>
+                <div class="step-text">診察</div>
               </div>
               <p>無駄なく、丁寧な診察を心がけます。必要に応じて、他の医療機関をご紹介します。</p>
             </div>
           </div>
-          <div class="medical_flx">
-            <div class="medical_pcno">4</div>
+          <div class="medical-step">
+            <div class="step-number__pc">4</div>
             <div><img src="https://placehold.jp/cc9999/993333/106x85.png" width="106" height="85" alt="" class="img" /></div>
-            <div class="medical_box">
-              <div class="medical_box2">
-                <div class="medical_no">4</div>
-                <div class="texpc">処方箋受付・帰宅</div>
+            <div class="step-content">
+              <div class="step-title">
+                <div class="step-number__sp">4</div>
+                <div class="step-text">処方箋受付・帰宅</div>
               </div>
               <p>スムーズな薬の受け取りができるよう工夫をしています。</p>
             </div>
           </div>
         </div>
-      </section>
-      <section id="business_hours">
+      </div>
+    </section>
+
+    <section id="business_hours">
+      <div class="container inner">
         <h2>診療時間</h2>
         <div class="border"></div>
-        <div class="pc_week">
-          <div class="week">
-            <h5><div class="week-day">平日・土日祝</div></h5>
-            <h5><div class="time">9:00〜20:00</div></h5>
+        <div class="schedule">
+          <div class="schedule-row">
+            <h5><div class="schedule-day">平日・土日祝</div></h5>
+            <h5><div class="schedule-time">9:00〜20:00</div></h5>
           </div>
-          <div class="holiday">
-            <h6><span class="holiday_data">休診日</span></h6>
-            <h6><span class="holiday_data-week">火・水</span></h6>
-            <h6><span class="holiday_data">休憩</span></h6>
-            <h6><span class="holiday_data-week">14:00〜15:00</span></h6>
+          <div class="schedule-row">
+            <h6><span class="schedule-label">休診日</span></h6>
+            <h6><span class="schedule-day">火・水</span></h6>
+            <h6><span class="schedule-label">休憩</span></h6>
+            <h6><span class="schedule-time">14:00〜15:00</span></h6>
           </div>
         </div>
-        <div class="features_flx">
-          <div class="features_box">
-            <div class="features_case"><img src="https://placehold.jp/cc9999/993333/88x88.png" width="88" height="88" /></div>
-            <div class="features_tex">
+        <div class="features-list">
+          <div class="feature-item">
+            <div class="feature-icon"><img src="https://placehold.jp/cc9999/993333/88x88.png" width="88" height="88" /></div>
+            <div class="feature-text">
               <h5>ランチタイム<br />診療OK</h5>
             </div>
           </div>
-          <div class="features_box">
-            <div class="features_case"><img src="https://placehold.jp/cc9999/993333/88x88.png" width="88" height="88" /></div>
-            <div class="features_tex">
+          <div class="feature-item">
+            <div class="feature-icon"><img src="https://placehold.jp/cc9999/993333/88x88.png" width="88" height="88" /></div>
+            <div class="feature-text">
               <h5>土日・祝日<br />診療OK</h5>
             </div>
           </div>
-          <div class="features_box">
-            <div class="features_case"><img src="https://placehold.jp/cc9999/993333/88x88.png" width="88" height="88" /></div>
-            <div class="features_tex">
+          <div class="feature-item">
+            <div class="feature-icon"><img src="https://placehold.jp/cc9999/993333/88x88.png" width="88" height="88" /></div>
+            <div class="feature-text">
               <h5>18時以降<br />診療OK</h5>
             </div>
           </div>
         </div>
-      </section>
-    </div>
-    <div class="container-information">
-      <section id="question">
+      </div>
+    </section>
+
+    <section id="question">
+      <div class="container inner">
         <h2>よくある質問</h2>
         <div class="border"></div>
         <div id="accordion" class="accordion-container">
-          <div class="accordion-title js-accordion-title">
-            <div class="q">Q</div>
-            <div class="q-title">診療時間は何時までですか？</div>
+          <div class="question-item js-accordion-title">
+            <div class="question-icon">Q</div>
+            <div class="question-title">診療時間は何時までですか？</div>
           </div>
-          <div class="accordion-content">
-            <div class="a_box">
-              <div class="a">A</div>
-              <div class="accordion-content-q">
+          <div class="answer-content">
+            <div class="answer-box">
+              <div class="answer-icon">A</div>
+              <div class="answer-text">
                 <p class="a_tex">診療時間は9：00から20:00までとなっており、会社の帰りにも立ち寄っていただきやすくなっています。<br />※14:00～15:00は昼休みです。<br />コロナ感染状況など考慮し、現在は20:00まで。</p>
               </div>
             </div>
           </div>
           <!--/.accordion-content-->
-          <div class="accordion-title js-accordion-title">
-            <div class="q">Q</div>
-            <div class="q-title">支払い方法はクレジットカードのみですか？</div>
+          <div class="question-item js-accordion-title">
+            <div class="question-icon">Q</div>
+            <div class="question-title">診療時間は何時までですか？</div>
           </div>
-          <div class="accordion-content">
-            <div class="a_box">
-              <div class="a">A</div>
-              <div class="accordion-content-q">
-                <p class="a_tex">当院ではクレジットカード、PayPay、交通系IC、iD、QUICPayなどのキャッシュレス決済を推奨しています。キャッシュレス決済がむずかしい方は現金決済も利用いただけます。</p>
+          <div class="answer-content">
+            <div class="answer-box">
+              <div class="answer-icon">A</div>
+              <div class="answer-text">
+                <p class="a_tex">診療時間は9：00から20:00までとなっており、会社の帰りにも立ち寄っていただきやすくなっています。<br />※14:00～15:00は昼休みです。<br />コロナ感染状況など考慮し、現在は20:00まで。</p>
               </div>
             </div>
           </div>
           <!--/.accordion-content-->
-          <div class="accordion-title js-accordion-title">
-            <div class="q">Q</div>
-            <div class="q-title">祝日は診察可能ですか？</div>
+          <div class="question-item js-accordion-title">
+            <div class="question-icon">Q</div>
+            <div class="question-title">診療時間は何時までですか？</div>
           </div>
-          <div class="accordion-content">
-            <div class="a_box">
-              <div class="a">A</div>
-              <div class="accordion-content-q">
-                <p class="a_tex">祝日も9:00から20:00まで診療しています。（土日も同様です）</p>
+          <div class="answer-content">
+            <div class="answer-box">
+              <div class="answer-icon">A</div>
+              <div class="answer-text">
+                <p class="a_tex">診療時間は9：00から20:00までとなっており、会社の帰りにも立ち寄っていただきやすくなっています。<br />※14:00～15:00は昼休みです。<br />コロナ感染状況など考慮し、現在は20:00まで。</p>
               </div>
             </div>
           </div>
           <!--/.accordion-content-->
-          <div class="accordion-title js-accordion-title">
-            <div class="q">Q</div>
-            <div class="q-title">診療に予約は必要ですか？</div>
+          <div class="question-item js-accordion-title">
+            <div class="question-icon">Q</div>
+            <div class="question-title">診療時間は何時までですか？</div>
           </div>
-          <div class="accordion-content">
-            <div class="a_box">
-              <div class="a">A</div>
-              <div>
-                <p class="a_tex">予約を優先して診療しますが、基本的に予約なしでも診療可能です。お近くをお立ち寄りの際は直接来ていただけば、診療可能な時間のご案内をいたします。</p>
+          <div class="answer-content">
+            <div class="answer-box">
+              <div class="answer-icon">A</div>
+              <div class="answer-text">
+                <p class="a_tex">診療時間は9：00から20:00までとなっており、会社の帰りにも立ち寄っていただきやすくなっています。<br />※14:00～15:00は昼休みです。<br />コロナ感染状況など考慮し、現在は20:00まで。</p>
               </div>
             </div>
           </div>
           <!--/.accordion-content-->
-          <div class="accordion-title js-accordion-title">
-            <div class="q">Q</div>
-            <div class="q-title">電話番号はありますか？</div>
+          <div class="question-item js-accordion-title">
+            <div class="question-icon">Q</div>
+            <div class="question-title">診療時間は何時までですか？</div>
           </div>
-          <div class="accordion-content">
-            <div class="a_box">
-              <div class="a">A</div>
-              <div>
-                <p class="a_tex">最小限の人数で運営していますので、基本的に電話対応は行っておりません。まれに電話をかけてこられる方がいらっしゃいますが、診療の妨げになりますので、お控えいただき、<a href="#">お問い合わせ</a>よりご連絡ください。</p>
+          <div class="answer-content">
+            <div class="answer-box">
+              <div class="answer-icon">A</div>
+              <div class="answer-text">
+                <p class="a_tex">診療時間は9：00から20:00までとなっており、会社の帰りにも立ち寄っていただきやすくなっています。<br />※14:00～15:00は昼休みです。<br />コロナ感染状況など考慮し、現在は20:00まで。</p>
+              </div>
+            </div>
+          </div>
+          <!--/.accordion-content-->
+          <div class="question-item js-accordion-title">
+            <div class="question-icon">Q</div>
+            <div class="question-title">診療時間は何時までですか？</div>
+          </div>
+          <div class="answer-content">
+            <div class="answer-box">
+              <div class="answer-icon">A</div>
+              <div class="answer-text">
+                <p class="a_tex">診療時間は9：00から20:00までとなっており、会社の帰りにも立ち寄っていただきやすくなっています。<br />※14:00～15:00は昼休みです。<br />コロナ感染状況など考慮し、現在は20:00まで。</p>
               </div>
             </div>
           </div>
           <!--/.accordion-content-->
         </div>
         <!--/#accordion-->
-      </section>
-      <section id="btn_set">
-        <div class="btn"><a href="#">すべてみる</a></div>
-      </section>
-      <section id="notice">
-        <h2 class="notice_pc">お知らせ</h2>
+        <div id="btn_set">
+          <div class="button-wrapper"><a href="#" class="button">すべてみる</a></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="notice">
+      <div class="container inner">
+        <h2 class="notice-title">お知らせ</h2>
         <div class="border"></div>
-        <div class="date_flx">
-          <div class="date_box">
+        <div class="notice-list">
+          <div class="notice-item">
             <a href="#">
-              <div class="date">
-                <div class="day">2023-03-16</div>
+              <div class="notice-date">
+                <div class="date-text">2023-03-16</div>
               </div>
               <h3>2023年3月の臨時休診</h3>
             </a>
           </div>
-          <div class="date_box">
+          <div class="notice-item">
             <a href="#">
-              <div class="date">
-                <div class="day">2023-01-22</div>
+              <div class="notice-date">
+                <div class="date-text">2023-01-22</div>
               </div>
               <h3>2023年2月16日休館日のお知らせ</h3>
             </a>
           </div>
-          <div class="date_box">
+          <div class="notice-item">
             <a href="#">
-              <div class="date">
-                <div class="day">2022-11-25</div>
+              <div class="notice-date">
+                <div class="date-text">2022-11-25</div>
               </div>
-              <h3>2022/2023　年末年始の休診</h3>
+              <h3>2022/2023 年末年始の休診</h3>
             </a>
           </div>
-          <div class="date_box">
+          <div class="notice-item">
             <a href="#">
-              <div class="date">
-                <div class="day">2022-09-01</div>
+              <div class="notice-date">
+                <div class="date-text">2022-09-01</div>
               </div>
               <h3>2022年9月の臨時休診</h3>
             </a>
           </div>
         </div>
-      </section>
-      <section id="btn_set">
-        <div class="btn"><a href="#">すべてみる</a></div>
-      </section>
-      <section id="articles">
+        <div id="btn_set">
+          <div class="button-wrapper"><a href="#" class="button">すべてみる</a></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="articles">
+      <div class="container inner">
         <h2>お役立ち記事</h2>
         <div class="border"></div>
-        <div class="articles_fix">
-          <div class="articles_box">
+        <div class="articles-grid">
+          <div class="article-item">
             <a href="#">
-              <div>
+              <div class="article-image">
                 <img src="https://placehold.jp/cc9999/993333/150x150.png" alt="テスト投稿" />
               </div>
-              <div class="articles_box2">
+              <div class="article-details">
                 <h6>2023-04-17 <span class="category"> Uncategorized </span></h6>
                 <h4>テスト投稿</h4>
               </div>
             </a>
           </div>
-          <div class="articles_box">
+          <div class="article-item">
             <a href="#">
-              <div>
+              <div class="article-image">
                 <img src="https://placehold.jp/cc9999/993333/150x150.png" alt="テスト投稿" />
               </div>
-              <div class="articles_box2">
-                <h6>2023-04-16 <span class="category"> Uncategorized </span></h6>
+              <div class="article-details">
+                <h6>2023-04-17 <span class="category"> Uncategorized </span></h6>
                 <h4>テスト投稿</h4>
               </div>
             </a>
           </div>
-          <div class="articles_box">
+          <div class="article-item">
             <a href="#">
-              <div>
+              <div class="article-image">
                 <img src="https://placehold.jp/cc9999/993333/150x150.png" alt="テスト投稿" />
               </div>
-              <div class="articles_box2">
-                <h6>2023-04-15 <span class="category"> Uncategorized </span></h6>
+              <div class="article-details">
+                <h6>2023-04-17 <span class="category"> Uncategorized </span></h6>
                 <h4>テスト投稿</h4>
               </div>
             </a>
           </div>
-          <div class="articles_box">
+          <div class="article-item">
             <a href="#">
-              <div>
+              <div class="article-image">
                 <img src="https://placehold.jp/cc9999/993333/150x150.png" alt="テスト投稿" />
               </div>
-              <div class="articles_box2">
-                <h6>2023-04-14 <span class="category"> Uncategorized </span></h6>
+              <div class="article-details">
+                <h6>2023-04-17 <span class="category"> Uncategorized </span></h6>
                 <h4>テスト投稿</h4>
               </div>
             </a>
           </div>
+          <!-- More article-items -->
         </div>
-      </section>
-      <section id="btn_set">
-        <div class="btn"><a href="#">すべてみる</a></div>
-      </section>
-      <section id="intro_movie" class="intro_movie">
+        <div class="button-wrapper">
+          <a href="#" class="button">すべてみる</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="move_section" class="video-section">
+      <div class="move-container">
         <img src="https://placehold.jp/cc9999/993333/560x315.png" alt="動画" />
         <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/TRbt9JSfOrQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
-      </section>
-    </div>
-    <footer>
-      <div class="container">
-        <div class="nav_left">
-          <div class="logo_box">
-            <div><img src="https://placehold.jp/cc9999/993333/240x23.png" width="240" height="23" alt="" /></div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container inner">
+        <div class="footer-content">
+          <div class="footer-logo">
+            <img src="https://placehold.jp/cc9999/993333/240x23.png" width="240" height="23" alt="" />
           </div>
-          <h6>内科</h6>
-          <div class="info_fix">
-            <div class="info">
+          <h6 class="footer-department">内科</h6>
+          <div class="footer-info">
+            <div class="footer-address">
               <p>〒810-0001</p>
               <p>兵庫県西脇市黒田庄123-5<br />大国神社前</p>
-              <div class="map"><a href="#" target="_blank">Googleマップでみる</a></div>
+              <div class="footer-map-link"><a href="#" target="_blank">Googleマップでみる</a></div>
             </div>
-            <div class="nav_right">
-              <table>
+            <div class="footer-schedule">
+              <table class="footer-schedule__table">
                 <tr>
-                  <th class="consultation">診療時間</th>
+                  <th class="footer-schedule__day">診療時間</th>
                   <th>月</th>
                   <th>火</th>
                   <th>水</th>
@@ -535,36 +575,37 @@
                   <th>日</th>
                 </tr>
                 <tr>
-                  <td class="consultation-time">09:00-14:00</td>
+                  <td class="footer-schedule__time">09:00-14:00</td>
                   <td>◯</td>
-                  <td class="consultation-tex">休</td>
-                  <td class="consultation-tex">休</td>
+                  <td class="footer-schedule__closed">休</td>
+                  <td class="footer-schedule__closed">休</td>
                   <td>◯</td>
                   <td>◯</td>
                   <td>◯</td>
                   <td>◯</td>
                 </tr>
                 <tr>
-                  <td class="consultation-time">15:00-20:00</td>
+                  <td class="footer-schedule__time">15:00-20:00</td>
                   <td>◯</td>
-                  <td class="consultation-tex">休</td>
-                  <td class="consultation-tex">休</td>
+                  <td class="footer-schedule__closed">休</td>
+                  <td class="footer-schedule__closed">休</td>
                   <td>◯</td>
                   <td>◯</td>
                   <td>◯</td>
                   <td>◯</td>
                 </tr>
               </table>
-              <p>休診日: 火曜日、水曜日<span class="nav_right-business-hours">昼休み: 14:00-15:00</span></p>
-              <div class="remarks">最寄り調剤薬局の営業時間は20時まで</div>
+              <p class="footer-closed-day">休診日: 火曜日、水曜日<span class="footer-break">昼休み: 14:00-15:00</span></p>
+              <div class="footer-remarks">最寄り調剤薬局の営業時間は20時まで</div>
             </div>
           </div>
         </div>
-        <div class="copywriting">
+        <div class="copyright">
           <p>© 2023</p>
         </div>
       </div>
     </footer>
+
     <script>
       jQuery(".accordion-content").css("display", "none");
       jQuery(function ($) {
