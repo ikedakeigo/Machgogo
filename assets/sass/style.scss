@@ -43,14 +43,50 @@ ol, ul {
 .container{
   max-width: 1120px;
   margin: 0 auto;
+  @include mq(md){
+    width: 698px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.main_title{
+  margin-top: 120px;
+  margin-bottom: 16px;
+  text-align: center;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 180%;
+  letter-spacing: 0.06em;
+  color: #005C42;
+}
+
+.sub_title{
+  font-style: normal;
+  font-weight: bold;
+  font-size: 26px;
+  line-height: 160%;
+  letter-spacing: 0.06em;
+  color: #005C42;
+  @include mq(sm){
+    font-size: 20px;
+  }
 }
 
 .border{
-
+  width: 20px;
+  height: 4px;
+  background: #F8B862;
+  border-radius: 8px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 36px;
 }
 
 .img{
-
+  width: 100%;
+  height: 100%;
 }
 
 .section{
@@ -63,6 +99,28 @@ ol, ul {
 a{
   text-decoration: none;
   transition: all 0.2s;
+  color: #005C42;
+}
+
+/*===================================
+ * margin padding
+===================================*/
+.mt_0{
+  margin-top: 0px;
+}
+.mt_24{
+  margin-top: 24px;
+}
+/*===================================
+ * 文字
+===================================*/
+
+p {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 160%;
+  letter-spacing: 0.06em;
   color: #005C42;
 }
 
@@ -234,6 +292,13 @@ a{
   }
 }
 
+/*===================================
+ * header
+===================================*/
+
+.header{
+  margin-top: 96px;
+}
 
 .header__flex{
   @include mq(md){
@@ -440,7 +505,7 @@ a{
 ===================================*/
 
 .covid19-attention{
-  font-size: 26px;
+
   font-weight: bold;
   border: 5px #005C42 solid;
   padding: 20px 40px;
@@ -451,11 +516,18 @@ a{
 
 .attention-title{
   text-align: center;
+  font-size: 26px;
+  line-height: 1.7;
+  word-wrap: break-word;
+  font-weight: bold;
+}
+
+.attention-text{
+  text-align: center;
   font-size: 16px;
   margin-top: 24px;
   line-height: 1.7;
   word-wrap: break-word;
-  font-weight: bold;
 }
 
 .covid19-reservation-link{
@@ -476,13 +548,20 @@ a{
 
 .background-image{
   width: 100%;
+  width: 660px;
   height: 95px;
-
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
   @include mq(sm){
     position: relative;
     margin-left: auto;
     margin-right: auto;
     width: 337px;
+  }
+
+  & img {
+    width: 100%;
   }
 }
 
@@ -494,10 +573,20 @@ a{
 
   & img{
     position: absolute;
-    top: 26px;
-    left: 14px;
-    width: 58px;
-    height: 53px;
+    top: 55px;
+    left: 30px;
+    width: 107px;
+    height: 98px;
+  }
+
+  &:nth-child(2) img{
+    left: 190px;
+  }
+  &:nth-child(3) img{
+    left: 363px;
+  }
+  &:nth-child(4) img{
+    left: 525px;
   }
 }
 
@@ -506,7 +595,9 @@ a{
 ===================================*/
 
 #medical{
-
+  & .main_title{
+    padding-top: 85px;
+  }
 }
 
 .medical-content{
@@ -519,8 +610,9 @@ a{
 
   &__item{
     position: relative;
-    width: 46%;
-    height: 138px;
+    width: 210px;
+    height: 210px;
+    margin: 17px;
     background: #005C42;
     border-radius: 20px;
     margin: 6px;
@@ -600,7 +692,9 @@ a{
   justify-content: start;
   margin-bottom: 20px;
     &__img{
-
+      & img{
+        margin-right: 41px;
+      }
     }
 
     &__text{
@@ -617,30 +711,48 @@ a{
 
 }
 
-.slider-area{
-  max-width: 100%;
+.slider-area {
+  width: 100%;
   margin: 0 auto;
   padding: 0 25px;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
-.full-screen{
-  margin: 0 auto;
+.full-screen {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
 }
 
-.slider{
-
+.slider {
+  display: grid;
+  grid-auto-flow: column;
+  width: 100%;
+  flex-shrink: 0;
+  width: 100%;
+  position: relative;
 }
 
-.slide-title{
+
+.slide img {
+  width: 100%;
+  height: auto;
+}
+
+.slide-title {
   font-style: normal;
   font-weight: bold;
   font-size: 20px;
   line-height: 130%;
   letter-spacing: 0.06em;
   color: #005C42;
+  position: absolute;
+  bottom: 40px;
+  left: 20px;
 }
 
-.slide-description{
+.slide-description {
   font-style: normal;
   font-weight: normal;
   font-size: 12px;
@@ -648,7 +760,12 @@ a{
   letter-spacing: 0.01em;
   color: #005C42;
   margin-top: 7px;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
 }
+
+
 
 /*===================================
  * medical
@@ -669,6 +786,9 @@ a{
   display: flex;
   justify-content: start;
   margin-bottom: 43px;
+  &:not(:last-child){
+    margin-right: 20px;
+  }
 
   @include mq(md){
     display: block;
@@ -703,6 +823,11 @@ a{
       margin-left: auto;
       margin-right: auto;
       margin-bottom: 9px;
+
+      &-box img{
+        height: 173px;
+        width: 215px;
+      }
     }
   }
 
@@ -734,7 +859,7 @@ a{
 }
 
 .step-title{
-  display: flex;
+  // display: flex;
 }
 
 .step-text{
@@ -754,6 +879,10 @@ a{
   }
 }
 
+.step-desc{
+  text-align: left;
+}
+
 /*===================================
  * business_hours
 ===================================*/
@@ -763,6 +892,14 @@ a{
 }
 
 .schedule{
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 150%;
+  letter-spacing: 0.06em;
+  color: #005C42;
+  margin-bottom: 13px;
+  text-align: center;
+
   @include mq(sm){
     width: 328px;
     margin-left: auto;
@@ -802,6 +939,8 @@ a{
 }
 
 .schedule-day{
+  font-size: 22px;
+  font-weight: bold;
   margin-right: 18px;
   display: inline-block;
   margin-top: 9px;
@@ -818,23 +957,33 @@ a{
 .schedule-time{
   font-style: normal;
   font-weight: bold;
-  font-size: 28px;
+  font-size: 40px;
+  margin-left: 25px;
   line-height: 100%;
   letter-spacing: 0.06em;
   color: #005C42;
+
+  &__holiday{
+    font-size: 22px;
+    margin-top: 15px;
+    margin-left: 15px;
+  }
 }
 
 .schedule-label{
-  padding: 5px;
-  height: 23px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   background: #B9D8CF;
   border-radius: 30px;
   display: inline-block;
   text-align: center;
-  line-height: 14px;
-  margin-right: 12px;
-  padding-left: 10px;
-  padding-right: 10px;
+  // height: 33px;
+  font-size: 14px;
+  line-height: 25px;
+  padding-left: 23px;
+  padding-right: 23px;
+
+  margin-left: 10px;
 }
 
 .features-list{
@@ -844,7 +993,7 @@ a{
 
   @include mq(md){
     width: 655px;
-    margin: 0 auto;
+    margin:  45px auto;
   }
 
 }
@@ -855,10 +1004,14 @@ a{
 
 .feature-icon{
   text-align: center;
-
   @include mq(md){
     width: 170px;
     height: 170px;
+  }
+
+  & img{
+    width: 100%;
+    height: 100%;
   }
 
 }
@@ -1050,6 +1203,8 @@ a{
   margin-left: auto;
   margin-right: auto;
   margin-top: 23px;
+
+  padding: 0 30px;
 }
 
 .button-wrapper{
@@ -1085,6 +1240,8 @@ a{
 
 .notice-item{
 
+  width: calc(50% - 15px);
+
   & a {
     display: flex;
     margin-bottom: 20px;
@@ -1114,11 +1271,33 @@ a{
 }
 
 .notice-date{
-
+  width: 54px;
+  height: 54px;
+  background-color: #47937D;
+  border-radius: 5px;
+  position: relative;
+  flex: none;
+  z-index: -1;
 }
 
 .date-text{
-
+  position: absolute;
+  font-style: normal;
+  font-weight: bold;
+  font-size: x-small;
+  letter-spacing: 0.06em;
+  color: #FFFFFF;
+  word-break: normal;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  margin: auto;
+  text-align: center;
+  width: 36px;
+  height: 36px;
+  line-height: 1.3;
+  margin-top: 3px;
+  word-wrap: break-word;
 }
 
 /*===================================
