@@ -1,11 +1,11 @@
 //マップ型変数breakpointsを定義
 $breakpoints: (
 //キー 値
-'xxs': 'screen and (max-width: 328px)',
-'xs': 'screen and (max-width: 401px)',
+// 'xxs': 'screen and (max-width: 328px)',
+// 'xs': 'screen and (max-width: 599px)',
 'sm': 'screen and (max-width: 767px)', //767px以下（スマホ）用の表示
 'md': 'screen and (min-width: 1120px)', //768px以上（タブレット・PC）用の表示
-'lg': 'screen and (min-width: 768px)',
+'lg': 'screen and (min-width: 1240px)',
 ) !default;
 
 //メディアクエリ用のmixinを定義。デフォ値はmd
@@ -16,6 +16,7 @@ $breakpoints: (
     @content;
   }
 }
+
 
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   margin: 0;
@@ -41,13 +42,23 @@ ol, ul {
  * 共通
 ===================================*/
 .container{
-  max-width: 1120px;
-  margin: 0 auto;
+  margin-left: 20px;
+  margin-right: 20px;
   @include mq(md){
+    max-width: 1120px;
+    margin: 0 auto;
+  }
+  @include mq(sm){
     width: 698px;
     margin-left: auto;
     margin-right: auto;
   }
+
+  // @include mq(sm){
+  //   width: 698px;
+  //   margin-left: auto;
+  //   margin-right: auto;
+  // }
 }
 
 .main_title{
@@ -127,6 +138,14 @@ p {
 /*===================================
  * sp-menu
 ===================================*/
+.fixed{
+  position: fixed;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  left: 0;
+}
+
 .sp-menu{
   position: fixed;
   top: 120vh;
@@ -135,11 +154,23 @@ p {
   height: 120vh;
   transition: .2s all ease-in;
   z-index: 20;
+  text-align: center;
   &__container{
     position: relative;
     height: 100vh;
   }
+
+  &.is_open {
+    position: fixed;
+    top: 0;
+    height: 1000vh;
+    padding-top: 50px;
+    background: #FFF;
+    z-index: 20;
+  }
 }
+
+
 
 .sp-nav{
 
@@ -292,12 +323,20 @@ p {
   }
 }
 
+
 /*===================================
  * header
 ===================================*/
 
 .header{
   margin-top: 96px;
+  background-image: url("https://placehold.jp/24/cc9999/993333/500x50.png");
+  background-size: cover;
+  @include mq(md){
+    background-image: url("https://placehold.jp/24/cc9999/993333/500x50.png");
+    background-size: cover;
+    height: 396px;
+  }
 }
 
 .header__flex{
@@ -362,30 +401,16 @@ p {
   }
 }
 
-/*===================================
- * header
-===================================*/
-
-.header{
-  background-image: url("spheadimg.png");
-  background-size: cover;
-  @include mq(md){
-    background-image: url("https://placehold.jp/24/cc9999/993333/500x50.png");
-    background-size: cover;
-    height: 396px;
-  }
-}
-
 .container-front{
   margin-left: 15px;
   margin-right: 15px;
 
   @include mq(sm){
-    margin-left: 34px;
-    margin-right: 35px;
+    // margin-left: 34px;
+    // margin-right: 35px;
   }
 
-  @include mq(md){
+  @include mq(sm){
     width: 500px;
     margin-left: auto;
     margin-right: auto;
@@ -446,18 +471,22 @@ p {
 }
 
 .front-button{
-  display: block;
-  width: 270px;
-  height: 140px;
-  background-color: #17875F;
-  border-radius: 6px;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 26px;
-  line-height: 157%;
-  align-items: center;
-  letter-spacing: 0.11em;
-  color: #FFFFFF;
+
+
+  @include mq(md){
+    display: block;
+    width: 270px;
+    height: 140px;
+    background-color: #17875F;
+    border-radius: 6px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 26px;
+    line-height: 157%;
+    align-items: center;
+    letter-spacing: 0.11em;
+    color: #FFFFFF;
+  }
 
   &__link{
 
@@ -553,6 +582,10 @@ p {
   position: relative;
   margin-left: auto;
   margin-right: auto;
+  // @include mq(sm){
+  //   width: 660px;
+  // }
+
   @include mq(sm){
     position: relative;
     margin-left: auto;
@@ -577,16 +610,31 @@ p {
     left: 30px;
     width: 107px;
     height: 98px;
+    @include mq(sm){
+      top: 32px;
+    left: 12px;
+    width: 58px;
+    height: 53px;
+    }
   }
 
   &:nth-child(2) img{
     left: 190px;
+    @include mq(sm){
+      left: 94px;
+    }
   }
   &:nth-child(3) img{
     left: 363px;
+    @include mq(sm){
+      left: 184px;
+    }
   }
   &:nth-child(4) img{
     left: 525px;
+    @include mq(sm){
+      left: 267px;
+    }
   }
 }
 

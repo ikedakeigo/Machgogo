@@ -21,10 +21,16 @@ ol, ul {
  * 共通
 ===================================*/
 .container {
-  max-width: 1120px;
-  margin: 0 auto;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 @media screen and (min-width: 1120px) {
+  .container {
+    max-width: 1120px;
+    margin: 0 auto;
+  }
+}
+@media screen and (max-width: 767px) {
   .container {
     width: 698px;
     margin-left: auto;
@@ -112,6 +118,14 @@ p {
 /*===================================
  * sp-menu
 ===================================*/
+.fixed {
+  position: fixed;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  left: 0;
+}
+
 .sp-menu {
   position: fixed;
   top: 120vh;
@@ -120,10 +134,19 @@ p {
   height: 120vh;
   transition: 0.2s all ease-in;
   z-index: 20;
+  text-align: center;
 }
 .sp-menu__container {
   position: relative;
   height: 100vh;
+}
+.sp-menu.is_open {
+  position: fixed;
+  top: 0;
+  height: 1000vh;
+  padding-top: 50px;
+  background: #FFF;
+  z-index: 20;
 }
 
 .sp-nav__logo {
@@ -241,7 +264,7 @@ p {
     margin-right: auto;
   }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1240px) {
   .container-header__nav {
     width: 1090px;
   }
@@ -252,6 +275,15 @@ p {
 ===================================*/
 .header {
   margin-top: 96px;
+  background-image: url("https://placehold.jp/24/cc9999/993333/500x50.png");
+  background-size: cover;
+}
+@media screen and (min-width: 1120px) {
+  .header {
+    background-image: url("https://placehold.jp/24/cc9999/993333/500x50.png");
+    background-size: cover;
+    height: 396px;
+  }
 }
 
 @media screen and (min-width: 1120px) {
@@ -294,39 +326,18 @@ p {
     color: #005C42;
   }
 }
-/*===================================
- * header
-===================================*/
-.header {
-  background-image: url("spheadimg.png");
-  background-size: cover;
-}
-@media screen and (min-width: 1120px) {
-  .header {
-    background-image: url("https://placehold.jp/24/cc9999/993333/500x50.png");
-    background-size: cover;
-    height: 396px;
-  }
-}
-
 .container-front {
   margin-left: 15px;
   margin-right: 15px;
 }
 @media screen and (max-width: 767px) {
   .container-front {
-    margin-left: 34px;
-    margin-right: 35px;
-  }
-}
-@media screen and (min-width: 1120px) {
-  .container-front {
     width: 500px;
     margin-left: auto;
     margin-right: auto;
   }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1240px) {
   .container-front {
     width: 830px;
     margin-left: auto;
@@ -379,19 +390,21 @@ p {
   margin: 0 5px 0 0;
 }
 
-.front-button {
-  display: block;
-  width: 270px;
-  height: 140px;
-  background-color: #17875F;
-  border-radius: 6px;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 26px;
-  line-height: 157%;
-  align-items: center;
-  letter-spacing: 0.11em;
-  color: #FFFFFF;
+@media screen and (min-width: 1120px) {
+  .front-button {
+    display: block;
+    width: 270px;
+    height: 140px;
+    background-color: #17875F;
+    border-radius: 6px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 26px;
+    line-height: 157%;
+    align-items: center;
+    letter-spacing: 0.11em;
+    color: #FFFFFF;
+  }
 }
 .front-button__link:hover {
   text-decoration: none;
@@ -493,14 +506,37 @@ p {
   width: 107px;
   height: 98px;
 }
+@media screen and (max-width: 767px) {
+  .status img {
+    top: 32px;
+    left: 12px;
+    width: 58px;
+    height: 53px;
+  }
+}
 .status:nth-child(2) img {
   left: 190px;
+}
+@media screen and (max-width: 767px) {
+  .status:nth-child(2) img {
+    left: 94px;
+  }
 }
 .status:nth-child(3) img {
   left: 363px;
 }
+@media screen and (max-width: 767px) {
+  .status:nth-child(3) img {
+    left: 184px;
+  }
+}
 .status:nth-child(4) img {
   left: 525px;
+}
+@media screen and (max-width: 767px) {
+  .status:nth-child(4) img {
+    left: 267px;
+  }
 }
 
 /*===================================

@@ -26,7 +26,7 @@
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js?ver=6.2" id="bootstrap-js-js"></script>
   </head>
   <body>
-    <div class="sp-menu">
+    <div class="sp-menu js-spmenu">
       <div class="sp-menu__container">
         <a href="index.html" class="sp-nav__logo-link">
           <div class="sp-nav__logo">
@@ -43,7 +43,7 @@
           <li class="sp-nav__item"><a href="https://lin.ee/dMpoXjs" class="sp-nav__link">お問い合わせ</a></li>
         </ul>
         <div class="close js-close">
-          <span class="close__icon"><img src="https://placehold.jp/150x150.png" /></span>
+          <span class="close__icon"><img src="/assets/img/batu.svg" /></span>
         </div>
       </div>
     </div>
@@ -61,9 +61,13 @@
     <script>
       $(".js-spmenu").on("click", function () {
         $(".sp-menu").addClass("is_open");
+        // is_openの時にdisplay:blockにする
+        $(".is_open").style.display = "block";
+
       });
-      $(".js-close").on("click", function () {
+      $(".sp-menu").on("click", function () {
         $(".sp-menu").removeClass("is_open");
+        $(".sp-menu").style.display = "none";
       });
       $(function () {
         var scrollPosition;
@@ -596,7 +600,7 @@
       <div class="container inner">
         <div class="footer-content">
           <div class="footer-logo">
-            <img src="https://placehold.jp/cc9999/993333/240x23.png" width="240" height="23" alt="" />
+            <img src="https://placehold.その部分が凍ててました､jp/cc9999/993333/240x23.png" width="240" height="23" alt="" />
           </div>
           <h6 class="footer-department">内科</h6>
           <div class="footer-info">
