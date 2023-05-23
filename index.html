@@ -26,7 +26,7 @@
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js?ver=6.2" id="bootstrap-js-js"></script>
   </head>
   <body>
-    <div class="sp-menu js-spmenu">
+    <div class="sp-menu">
       <div class="sp-menu__container">
         <a href="index.html" class="sp-nav__logo-link">
           <div class="sp-nav__logo">
@@ -61,8 +61,6 @@
     <script>
       $(".js-spmenu").on("click", function () {
         $(".sp-menu").addClass("is_open");
-        // is_openの時にdisplay:blockにする
-        $(".is_open").style.display = "block";
 
       });
       $(".sp-menu").on("click", function () {
@@ -110,7 +108,7 @@
     <header class="header">
       <div class="container-front">
         <div class="front-text">
-          <p class="front-text__main">音速で帰ろう</p>
+          <p class="front-text__main">駅なかクリニックで<br class="is-sp">音速で帰ろう</p>
           <div class="front-text__secondary">
             当院は熱がある、お腹が痛い、鼻水など体に不調のある方が、
             <span class="highlight">忙しい日常の合間</span>
@@ -216,7 +214,8 @@
               <img src="/assets/img/value1@2x.png" width="106" height="106" alt="" />
             </div>
             <div class="value-item__text">
-              <h3 class="sub_title">紙の診察券なし スマホで受付</h3>
+              <h3 class="sub_title">
+                紙の診察券なし<br class="is-sp">スマホで受付</h3>
             </div>
           </div>
           <div class="value-item">
@@ -224,7 +223,9 @@
               <img src="/assets/img/value2@2x.png" width="106" height="106" alt="" />
             </div>
             <div class="value-item__text">
-              <h3 class="sub_title">キャッシュレス決済OK</h3>
+              <h3 class="sub_title">
+                キャッシュレス決済OK
+              </h3>
             </div>
           </div>
           <div class="value-item">
@@ -232,7 +233,10 @@
               <img src="/assets/img/value3@2x.png" width="106" height="106" alt="" />
             </div>
             <div class="value-item__text">
-              <h3 class="sub_title">診察室を出たら そのまま薬局へ</h3>
+              <h3 class="sub_title">
+                診察室を出たら<br class="is-sp">
+                そのまま薬局へ
+              </h3>
             </div>
           </div>
           <div class="value-item">
@@ -281,7 +285,7 @@
       </div>
     </section>
 
-    <section id="medical">
+    <section id="">
       <div class="container inner">
         <h2 class="main_title">診療の流れ</h2>
         <div class="border"></div>

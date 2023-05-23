@@ -2,10 +2,10 @@
 $breakpoints: (
 //キー 値
 // 'xxs': 'screen and (max-width: 328px)',
-// 'xs': 'screen and (max-width: 599px)',
+'xs': 'screen and (max-width: 599px)',
 'sm': 'screen and (max-width: 767px)', //767px以下（スマホ）用の表示
-'md': 'screen and (min-width: 1120px)', //768px以上（タブレット・PC）用の表示
-'lg': 'screen and (min-width: 1240px)',
+'md': 'screen and (min-width: 768px)', //768px以上（タブレット・PC）用の表示
+'lg': 'screen and (min-width: 1024px)',
 ) !default;
 
 //メディアクエリ用のmixinを定義。デフォ値はmd
@@ -28,8 +28,6 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 }
 
 
-/* HTML5 display-role reset for older browsers */
-
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
   display: block;
 }
@@ -41,24 +39,33 @@ ol, ul {
 /*===================================
  * 共通
 ===================================*/
+
+.is-pc{
+  display: none;
+  @include mq(md){
+    display: block;
+  }
+}
+.is-sp{
+  display: block;
+  @include mq(md){
+    display: none;
+  }
+}
+
 .container{
   margin-left: 20px;
   margin-right: 20px;
+  max-width: 1120px;
   @include mq(md){
-    max-width: 1120px;
+    width: 698px;
     margin: 0 auto;
   }
   @include mq(sm){
-    width: 698px;
-    margin-left: auto;
-    margin-right: auto;
+    width: 80%;
+    margin: 0 auto;
   }
 
-  // @include mq(sm){
-  //   width: 698px;
-  //   margin-left: auto;
-  //   margin-right: auto;
-  // }
 }
 
 .main_title{
@@ -71,6 +78,9 @@ ol, ul {
   line-height: 180%;
   letter-spacing: 0.06em;
   color: #005C42;
+  @include mq(xs){
+    margin-top: 50px;
+  }
 }
 
 .sub_title{
@@ -95,11 +105,6 @@ ol, ul {
   margin-bottom: 36px;
 }
 
-.img{
-  width: 100%;
-  height: 100%;
-}
-
 .section{
   max-width: 100%;
   margin: 0 auto;
@@ -121,6 +126,41 @@ a{
 }
 .mt_24{
   margin-top: 24px;
+}
+
+/*===================================
+ * btn_set
+===================================*/
+
+#btn_set{
+  text-align: center;
+  margin-top: 30px;
+}
+
+.button{
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 130%;
+  text-align: center;
+  letter-spacing: 0.06em;
+  display: inline-block;
+  height: 44px;
+  border-radius: 60px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #B9D8CF;
+  transition: all .2s;
+  line-height: 44px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 23px;
+
+  padding: 0 30px;
+}
+
+.button-wrapper{
+  text-align: center;
 }
 /*===================================
  * 文字
@@ -148,7 +188,7 @@ p {
 
 .sp-menu{
   position: fixed;
-  top: 120vh;
+  top: 215vh;
   width: 100%;
   background: #FFF;
   height: 120vh;
@@ -203,10 +243,6 @@ p {
   }
 }
 
-.close{
-
-}
-
 .js-close{
   position: absolute;
   left: 20px;
@@ -218,7 +254,6 @@ p {
 }
 
 .close__icon{
-
   & img{
     position: absolute;
     top: 13px;
@@ -226,20 +261,24 @@ p {
   }
 }
 
+/*===================================
+ * sp footer-box
+===================================*/
+
 .footer-box{
   position: fixed;
   width: 100%;
-  bottom: 0px;
-  left: 0px;
+  bottom: 0;
+  left: 0;
   z-index: 10;
 }
 
 .footer__flex{
   display: flex;
-  width: 100;
+  width: 100%;
   filter: drop-shadow(0px -4px 15px rgba(0, 0, 0, 0.08));
 
-  @include mq(md){
+  @include mq(lg){
     display: none;
   }
 }
@@ -250,10 +289,18 @@ p {
   width: 70px;
   background-color: white;
   display: table;
-}
 
-.js-spmenu{
-
+  & img {
+    position: absolute;
+    display: table-cell;
+    width: 33px;
+    height: 30.8px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+  }
 }
 
 .page-bottom{
@@ -312,14 +359,13 @@ p {
 }
 
 .container-header__nav{
+  margin-left: 50px;
+  @include mq(sm){
+    margin-left: 30px;
+  }
   @include mq(md){
     width: 1000px;
-    margin-left: auto;
     margin-right: auto;
-  }
-
-  @include mq(lg){
-    width: 1090px;
   }
 }
 
@@ -327,6 +373,10 @@ p {
 /*===================================
  * header
 ===================================*/
+
+#top{
+  height: 100px;
+}
 
 .header{
   margin-top: 96px;
@@ -336,6 +386,9 @@ p {
     background-image: url("https://placehold.jp/24/cc9999/993333/500x50.png");
     background-size: cover;
     height: 396px;
+  }
+  @include mq(sm){
+    margin-top: 0;
   }
 }
 
@@ -374,7 +427,7 @@ p {
 
   &__list{
     display: none;
-    @include mq(md){
+    @include mq(lg){
       display: flex;
     }
   }
@@ -406,14 +459,8 @@ p {
   margin-right: 15px;
 
   @include mq(sm){
-    // margin-left: 34px;
-    // margin-right: 35px;
-  }
-
-  @include mq(sm){
-    width: 500px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 34px;
+    margin-right: 35px;
   }
 
   @include mq(lg){
@@ -472,8 +519,7 @@ p {
 
 .front-button{
 
-
-  @include mq(md){
+  @include mq(lg){
     display: block;
     width: 270px;
     height: 140px;
@@ -501,7 +547,7 @@ p {
 .reservation-text{
   display: none;
 
-  @include mq(md){
+  @include mq(lg){
     display: block;
     font-style: normal;
     font-weight: bold;
@@ -582,15 +628,15 @@ p {
   position: relative;
   margin-left: auto;
   margin-right: auto;
-  // @include mq(sm){
-  //   width: 660px;
-  // }
 
   @include mq(sm){
-    position: relative;
     margin-left: auto;
     margin-right: auto;
-    width: 337px;
+    width: 59vw;
+  }
+
+  @include mq(xs){
+    width: 85vw;
   }
 
   & img {
@@ -611,29 +657,32 @@ p {
     width: 107px;
     height: 98px;
     @include mq(sm){
-      top: 32px;
-    left: 12px;
-    width: 58px;
-    height: 53px;
+      top: 50%;
+      left: 10%;
+      transform: translate(-40%, -50%);
+      width: 10.84vw;
+    }
+    @include mq(xs){
+      width: 15.84vw;
     }
   }
 
   &:nth-child(2) img{
     left: 190px;
     @include mq(sm){
-      left: 94px;
+      left: 35%;
     }
   }
   &:nth-child(3) img{
     left: 363px;
     @include mq(sm){
-      left: 184px;
+      left: 61%;
     }
   }
   &:nth-child(4) img{
     left: 525px;
     @include mq(sm){
-      left: 267px;
+      left: 85%;
     }
   }
 }
@@ -645,6 +694,14 @@ p {
 #medical{
   & .main_title{
     padding-top: 85px;
+    @include mq(sm){
+      padding-top: 0;
+    }
+  }
+  & .container {
+    @include mq(sm){
+      width: 100%;
+    }
   }
 }
 
@@ -679,6 +736,11 @@ p {
       transform: translate(-50%, -50%);
       -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
+    }
+
+    @include mq(sm){
+      width: 158px;
+      height: 158px;
     }
   }
 }
@@ -819,9 +881,6 @@ p {
  * medical
 ===================================*/
 
-#medical{
-
-}
 
 .medical-steps{
   @include mq(md){
@@ -847,15 +906,20 @@ p {
     object-fit: cover;
   }
 
-  @include mq(lg){
-
-  }
 }
 
 .step-number{
 
   &__pc{
     display: none;
+    @include mq(sm){
+      &-box .img{
+        margin-right: 17px;
+        object-fit: cover;
+        border-radius: 2vh
+      }
+    }
+
     @include mq(md){
       display: block;
       background: #005C42;
@@ -871,8 +935,10 @@ p {
       margin-left: auto;
       margin-right: auto;
       margin-bottom: 9px;
+    }
 
-      &-box img{
+    @include mq(lg){
+      &-box .img{
         height: 173px;
         width: 215px;
       }
@@ -907,7 +973,9 @@ p {
 }
 
 .step-title{
-  // display: flex;
+  @include mq(sm){
+    display: flex;
+  }
 }
 
 .step-text{
@@ -963,6 +1031,7 @@ p {
 
 .schedule-row{
   display: flex;
+  justify-content: center;
   font-style: normal;
   font-weight: bold;
   font-size: 12px;
@@ -971,6 +1040,7 @@ p {
   color: #005C42;
   margin-bottom: 13px;
   text-align: center;
+  align-items: center;
 
   & h5{
     letter-spacing: 0.06em;
@@ -992,6 +1062,12 @@ p {
   margin-right: 18px;
   display: inline-block;
   margin-top: 9px;
+
+  @include mq(sm){
+    font-size: 15px;
+    margin-right: 0;
+    margin-top: 0;
+  }
 
   @include mq(md){
     margin-right: 0px;
@@ -1015,6 +1091,14 @@ p {
     font-size: 22px;
     margin-top: 15px;
     margin-left: 15px;
+    @include mq(sm){
+      font-size: 15px;
+      margin-left: 0;
+    }
+  }
+
+  @include mq(sm){
+    font-size: 28px;
   }
 }
 
@@ -1025,18 +1109,24 @@ p {
   border-radius: 30px;
   display: inline-block;
   text-align: center;
-  // height: 33px;
   font-size: 14px;
   line-height: 25px;
   padding-left: 23px;
   padding-right: 23px;
 
   margin-left: 10px;
+
+  @include mq(sm){
+    font-size: 12px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-right: 12px;
+  }
 }
 
 .features-list{
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   margin-top: 45px;
 
   @include mq(md){
@@ -1055,11 +1145,6 @@ p {
   @include mq(md){
     width: 170px;
     height: 170px;
-  }
-
-  & img{
-    width: 100%;
-    height: 100%;
   }
 
 }
@@ -1230,41 +1315,6 @@ p {
   color: #005C42;
 }
 
-/*===================================
- * btn_set
-===================================*/
-
-#btn_set{
-  text-align: center;
-  margin-top: 30px;
-}
-
-.button{
-  font-style: normal;
-  font-weight: normal;
-  font-size: 13px;
-  line-height: 130%;
-  text-align: center;
-  letter-spacing: 0.06em;
-  display: inline-block;
-  height: 44px;
-  border-radius: 60px;
-  border-style: solid;
-  border-width: 1px;
-  border-color: #B9D8CF;
-  transition: all .2s;
-  line-height: 44px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 23px;
-
-  padding: 0 30px;
-}
-
-.button-wrapper{
-  text-align: center;
-}
-
 
 /*===================================
  * notice
@@ -1286,10 +1336,16 @@ p {
 }
 
 .notice-list{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin: 0 auto;
+  @include mq(lg){
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 auto;
+  }
+
+  @include mq(sm){
+    display: block;
+  }
 }
 
 .notice-item{
@@ -1305,7 +1361,6 @@ p {
       color: #005C42;
       opacity: 0.9;
     }
-
   }
 
   & h3 {
@@ -1321,6 +1376,10 @@ p {
     -webkit-line-clamp: 2;
     overflow: hidden;
     text-align: start;
+  }
+
+  @include mq(sm){
+    width: 100%;
   }
 }
 
@@ -1363,13 +1422,19 @@ p {
 }
 
 .articles-grid{
-  display: flex;
-  flex-wrap: wrap;
+  @include mq(lg){
+    display: flex;
+    flex-wrap: wrap;
+    width: 698px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: space-between;
+  }
 
-  width: 698px;
-  margin-left: auto;
-  margin-right: auto;
-  justify-content: space-between;
+  @include mq(sm){
+    display: block;
+    width: 100%;
+  }
 }
 
 .article-item{
@@ -1381,6 +1446,10 @@ p {
     height: 100%;
     text-decoration: none;
     color: #005C42;
+  }
+
+  @include mq(sm){
+    width: 100%;
   }
 }
 
@@ -1440,7 +1509,7 @@ p {
 .video-section{
   margin-top: 41px;
   position: relative;
-  padding-bottom: 56.25%;
+  padding-bottom: 20vh;
   overflow: hidden;
 
   & iframe{
@@ -1450,10 +1519,14 @@ p {
     width: 101%;
     height: 101%;
   }
+
+  @include mq(xs){
+    padding-bottom: 10vh;
+  }
 }
 
 .move-container{
-
+  text-align: center;
 }
 
 /*===================================
@@ -1498,10 +1571,16 @@ p {
 
 .footer-info{
   display: flex;
+  @include mq(sm){
+    display: block;
+  }
 }
 
 .footer-address{
   width: 350px;
+  @include mq(xs){
+    width: 100%;
+  }
 }
 
 .footer-map-link{
@@ -1537,6 +1616,9 @@ p {
       padding-bottom: 10px;
       padding-right: 10px;
       text-align: center;
+    }
+    @include mq(xs){
+      width: 100%;
     }
   }
 
