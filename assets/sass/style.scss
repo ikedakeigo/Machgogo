@@ -37,8 +37,17 @@ ol, ul {
 }
 
 /*===================================
+ * color
+===================================*/
+$main-color: #021F59;
+$sub-color: #072A40;
+$btn-color: #011640;
+$light-color: #5F7092;
+$white-color: #EBF0F2;
+/*===================================
  * 共通
 ===================================*/
+
 
 .is-pc{
   display: none;
@@ -77,7 +86,7 @@ ol, ul {
   font-size: 30px;
   line-height: 180%;
   letter-spacing: 0.06em;
-  color: #005C42;
+  color: $main-color;
   @include mq(xs){
     margin-top: 50px;
   }
@@ -89,7 +98,7 @@ ol, ul {
   font-size: 26px;
   line-height: 160%;
   letter-spacing: 0.06em;
-  color: #005C42;
+  color: $main-color;
   @include mq(sm){
     font-size: 20px;
   }
@@ -115,7 +124,7 @@ ol, ul {
 a{
   text-decoration: none;
   transition: all 0.2s;
-  color: #005C42;
+  color: $main-color;
 }
 
 /*===================================
@@ -149,7 +158,7 @@ a{
   border-radius: 60px;
   border-style: solid;
   border-width: 1px;
-  border-color: #B9D8CF;
+  border-color: $sub-color;
   transition: all .2s;
   line-height: 44px;
   margin-left: auto;
@@ -172,7 +181,7 @@ p {
   font-size: 16px;
   line-height: 160%;
   letter-spacing: 0.06em;
-  color: #005C42;
+  color: $main-color;
 }
 
 /*===================================
@@ -235,10 +244,10 @@ p {
     font-size: 16px;
     line-height: 16px;
     letter-spacing: 0.05em;
-    color: #005C42;
+    color: $main-color;
 
     &:hover{
-      color: #005C42;
+      color: $main-color;
     }
   }
 }
@@ -250,7 +259,7 @@ p {
   width: 43px;
   height: 43px;
   border-radius: 50%;
-  background-color: #005C42;
+  background-color: $main-color;
 }
 
 .close__icon{
@@ -306,13 +315,13 @@ p {
 .page-bottom{
   width: 100%;
   height: 84px;
-  background-color: #00A375;
+  background-color: $btn-color;
   font-style: normal;
   font-weight: bold;
   font-size: 18px;
   text-align: center;
   letter-spacing: 0.16em;
-  color: #FFFFFF;
+  color: $white-color;
   line-height: 84px;
 
   & a{
@@ -324,7 +333,7 @@ p {
   }
 
   &__text{
-    color: #FFFFFF;
+    color: $white-color;
     font-size: 16px;
   }
 }
@@ -341,7 +350,7 @@ p {
 
   @include mq(md){
     position: fixed;
-    background-color: #FFFFFF;
+    background-color: $white-color;
     width: 100%;
     z-index: 1;
     top: 0;
@@ -353,7 +362,7 @@ p {
     font-size: 13px;
     line-height: 19px;
     letter-spacing: 0.1em;
-    color: #005C42;
+    color: $main-color;
     margin-bottom: 20px;
   }
 }
@@ -369,6 +378,188 @@ p {
   }
 }
 
+/*===================================
+ * slick-slider
+===================================*/
+// .slick-next{
+//   z-index: 100;
+// }
+.slick-slider{
+  position: relative;
+  @include mq(lg){
+    margin-top: 100px;
+  }
+  @include mq(sm){
+    width: 90%;
+  }
+}
+
+.slick-slide {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+}
+
+.mv_slideHeght{
+  height: 700px !important;  /* 高さはお好みで設定してください */
+  @include mq(sm){
+    height: 400px !important;
+  }
+}
+
+.slick-slide {
+  @include mq(lg){
+    margin: 20px;
+  }
+}
+
+.slick-slide img {
+  width: 100%;
+}
+.container-front2{
+  position: absolute;
+  // width: 30%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-20%, -50%);
+  z-index: 10;
+
+  @include mq(sm){
+    // width: 60%;
+    top: 35%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+
+.front-contents{
+  margin-top: 30px;
+}
+
+.container-front2{
+  margin-left: 15px;
+  margin-right: 15px;
+
+  @include mq(sm){
+    margin-left: 34px;
+    margin-right: 35px;
+  }
+
+  @include mq(lg){
+    width: 830px;
+    margin-left: auto;
+    margin-right: auto;
+    // display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+    padding-top: 50px;
+  }
+}
+
+.front-text2{
+  background-color: #ffff;
+  padding-left: 20px;
+  padding-right: 20px;
+  &__main2{
+    font-style: normal;
+    font-weight: bold;
+    font-size: 31px;
+    line-height: 158%;
+    letter-spacing: 0.02em;
+    color: $main-color;
+    padding-top: 43px;
+
+    @include mq(sm){
+      width: 285px;
+    }
+
+    @include mq(md){
+      width: 390px;
+      font-size: 42px;
+      padding-top: 90px;
+    }
+  }
+
+  &__secondary2{
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 191%;
+    letter-spacing: 0.03em;
+    color: $main-color;
+    padding-bottom: 40px;
+  }
+}
+
+.highlight2{
+  background-color: $white-color;
+  color: $main-color;
+  line-height: 150%;
+  display: inline-block;
+  padding: 0 3px;
+  margin: 0 5px 0 0;
+}
+
+.front-button2{
+  margin-left: auto;
+  @include mq(lg){
+    display: block;
+    width: 270px;
+    height: 140px;
+    background-color: $btn-color;
+    border-radius: 6px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 26px;
+    line-height: 157%;
+    align-items: center;
+    letter-spacing: 0.11em;
+    color: $white-color;
+  }
+
+  &__link2{
+
+    &:hover{
+      text-decoration: none;
+    }
+
+  }
+
+}
+
+.reservation-text2{
+  display: none;
+
+  @include mq(lg){
+    display: block;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 26px;
+    line-height: 157%;
+    width: 174px;
+    word-wrap: break-word;
+    align-items: center;
+    letter-spacing: 0.11em;
+    color: $white-color;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 30px;
+
+    &::after{
+    content: '';
+    display: inline-block;
+    background-image: url("/assets/img/arrow.svg");
+    background-size: contain;
+    width: 18px;
+    height: 18px;
+    margin-left: 10px;
+    }
+  }
+}
+
+
 
 /*===================================
  * header
@@ -380,10 +571,10 @@ p {
 
 .header{
   margin-top: 96px;
-  background-image: url("https://placehold.jp/24/cc9999/993333/500x50.png");
+  background-image: url("/assets/img/mach_mv.png");
   background-size: cover;
   @include mq(md){
-    background-image: url("https://placehold.jp/24/cc9999/993333/500x50.png");
+    background-image: url("/assets/img/mach_mv.png");
     background-size: cover;
     height: 396px;
   }
@@ -443,7 +634,7 @@ p {
         line-height: 16px;
         text-align: center;
         letter-spacing: 0.06em;
-        color: #005C42;
+        color: $main-color;
       }
 
     }
@@ -483,7 +674,7 @@ p {
     font-size: 31px;
     line-height: 158%;
     letter-spacing: 0.02em;
-    color: #FFFFFF;
+    color: $white-color;
     padding-top: 43px;
 
     @include mq(sm){
@@ -503,14 +694,14 @@ p {
     font-size: 15px;
     line-height: 191%;
     letter-spacing: 0.03em;
-    color: #FFFFFF;
+    color: $white-color;
     padding-bottom: 40px;
   }
 }
 
 .highlight{
-  background-color: #FFFFFF;
-  color: #005C42;
+  background-color: $white-color;
+  color: $main-color;
   line-height: 150%;
   display: inline-block;
   padding: 0 3px;
@@ -523,7 +714,7 @@ p {
     display: block;
     width: 270px;
     height: 140px;
-    background-color: #17875F;
+    background-color: $btn-color;
     border-radius: 6px;
     font-style: normal;
     font-weight: bold;
@@ -531,7 +722,7 @@ p {
     line-height: 157%;
     align-items: center;
     letter-spacing: 0.11em;
-    color: #FFFFFF;
+    color: $white-color;
   }
 
   &__link{
@@ -557,7 +748,7 @@ p {
     word-wrap: break-word;
     align-items: center;
     letter-spacing: 0.11em;
-    color: #FFFFFF;
+    color: $white-color;
     margin-left: auto;
     margin-right: auto;
     padding-top: 30px;
@@ -582,7 +773,7 @@ p {
 .covid19-attention{
 
   font-weight: bold;
-  border: 5px #005C42 solid;
+  border: 5px $main-color solid;
   padding: 20px 40px;
   padding:  20px 40px;
   margin: 40px 0;
@@ -718,7 +909,7 @@ p {
     width: 210px;
     height: 210px;
     margin: 17px;
-    background: #005C42;
+    background: $main-color;
     border-radius: 20px;
     margin: 6px;
 
@@ -769,7 +960,7 @@ p {
   line-height: 140%;
   text-align: center;
   letter-spacing: 0.06em;
-  color: #FFFFFF;
+  color: $white-color;
   margin-top: 16px;
   height: 32px;
   display: flex;
@@ -848,6 +1039,8 @@ p {
 .slide img {
   width: 100%;
   height: auto;
+  margin-bottom: 20px;
+  border-radius: 8px;
 }
 
 .slide-title {
@@ -856,8 +1049,8 @@ p {
   font-size: 20px;
   line-height: 130%;
   letter-spacing: 0.06em;
-  color: #005C42;
-  position: absolute;
+  color: $main-color;
+  // position: absolute;
   bottom: 40px;
   left: 20px;
 }
@@ -868,9 +1061,9 @@ p {
   font-size: 12px;
   line-height: 160%;
   letter-spacing: 0.01em;
-  color: #005C42;
+  color: $main-color;
   margin-top: 7px;
-  position: absolute;
+  // position: absolute;
   bottom: 20px;
   left: 20px;
 }
@@ -922,7 +1115,7 @@ p {
 
     @include mq(md){
       display: block;
-      background: #005C42;
+      background: $main-color;
       width: 26px;
       height: 26px;
       border-radius: 50%;
@@ -930,7 +1123,7 @@ p {
       text-align: center;
       font-weight: bold;
       font-size: 14px;
-      color: #FFFFFF;
+      color: $white-color;
       flex: none;
       margin-left: auto;
       margin-right: auto;
@@ -946,7 +1139,7 @@ p {
   }
 
   &__sp{
-    background: #005C42;
+    background: $main-color;
     width: 26px;
     height: 26px;
     border-radius: 50%;
@@ -954,7 +1147,7 @@ p {
     text-align: center;
     font-weight: bold;
     font-size: 14px;
-    color: #FFFFFF;
+    color: $white-color;
     margin-right: 12px;
     flex: none;
     margin-top: 1px;
@@ -984,7 +1177,7 @@ p {
   font-size: 16px;
   line-height: 160%;
   letter-spacing: 0.06em;
-  color: #005C42;
+  color: $main-color;
 
   @include mq(md){
     font-style: normal;
@@ -1012,7 +1205,7 @@ p {
   font-size: 12px;
   line-height: 150%;
   letter-spacing: 0.06em;
-  color: #005C42;
+  color: $main-color;
   margin-bottom: 13px;
   text-align: center;
 
@@ -1037,7 +1230,7 @@ p {
   font-size: 12px;
   line-height: 150%;
   letter-spacing: 0.06em;
-  color: #005C42;
+  color: $main-color;
   margin-bottom: 13px;
   text-align: center;
   align-items: center;
@@ -1052,7 +1245,7 @@ p {
     font-size: 10px;
     line-height: 150%;
     letter-spacing: 0.06em;
-    color: #005C42;
+    color: $main-color;
   }
 }
 
@@ -1085,7 +1278,7 @@ p {
   margin-left: 25px;
   line-height: 100%;
   letter-spacing: 0.06em;
-  color: #005C42;
+  color: $main-color;
 
   &__holiday{
     font-size: 22px;
@@ -1105,7 +1298,7 @@ p {
 .schedule-label{
   padding-top: 5px;
   padding-bottom: 5px;
-  background: #B9D8CF;
+  background: $white-color;
   border-radius: 30px;
   display: inline-block;
   text-align: center;
@@ -1144,7 +1337,7 @@ p {
   text-align: center;
   @include mq(md){
     width: 170px;
-    height: 170px;
+    // height: 170px;
   }
 
 }
@@ -1158,7 +1351,7 @@ p {
     font-size: 15px;
     line-height: 140%;
     letter-spacing: 0.06em;
-    color: #005C42;
+    color: $main-color;
     margin-top: 12px;
 
     @include mq(md){
@@ -1207,14 +1400,14 @@ p {
   font-style: normal;
   font-weight: bold;
   font-size: 16px;
-  color: #005C42;
+  color: $main-color;
   letter-spacing: 0.06em;
   cursor: pointer;
   display: flex;
   line-height: 130%;
 
   &:hover{
-    color: #005C42;
+    color: $main-color;
     text-decoration: underline;
   }
 
@@ -1227,7 +1420,7 @@ p {
     height: 2px;
     /*縦線に*/
     transform: rotate(90deg);
-    background: #005C42;
+    background: $main-color;
     transition: all .3s ease-in-out;
   }
 
@@ -1239,7 +1432,7 @@ p {
     /*横線*/
     width: 15px;
     height: 2px;
-    background: #005C42;
+    background: $main-color;
     transition: all .2s ease-in-out;
   }
 
@@ -1255,13 +1448,13 @@ p {
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background-color: #005C42;
+  background-color: $main-color;
   font-style: normal;
   font-weight: bold;
   font-size: 18px;
   line-height: 30px;
   text-align: center;
-  color: #FFFFFF;
+  color: $white-color;
   display: inline-block;
   margin-right: 17px;
   flex: none;
@@ -1290,13 +1483,13 @@ p {
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background-color: #B9D8CF;
+  background-color: $sub-color;
   font-style: normal;
   font-weight: bold;
   font-size: 18px;
   line-height: 30px;
   text-align: center;
-  color: #005C42;
+  color: $main-color;
   display: inline-block;
   margin-right: 17px;
   flex: none;
@@ -1312,7 +1505,7 @@ p {
   font-size: 13px;
   line-height: 160%;
   letter-spacing: 0.06em;
-  color: #005C42;
+  color: $main-color;
 }
 
 
@@ -1332,7 +1525,7 @@ p {
   font-size: 26px;
   line-height: 180%;
   letter-spacing: 0.06em;
-  color: #005C42;
+  color: $main-color;
 }
 
 .notice-list{
@@ -1358,7 +1551,7 @@ p {
     align-items: center;
     &:hover{
       text-decoration: underline;
-      color: #005C42;
+      color: $main-color;
       opacity: 0.9;
     }
   }
@@ -1369,7 +1562,7 @@ p {
     font-weight: bold;
     font-size: 18px;
     letter-spacing: 0.05em;
-    color: #005C42;
+    color: $main-color;
     word-break: break-all;
     display: -webkit-box;
     -webkit-box-orient: vertical;
@@ -1386,7 +1579,7 @@ p {
 .notice-date{
   width: 54px;
   height: 54px;
-  background-color: #47937D;
+  background-color: $light-color;
   border-radius: 5px;
   position: relative;
   flex: none;
@@ -1399,7 +1592,7 @@ p {
   font-weight: bold;
   font-size: x-small;
   letter-spacing: 0.06em;
-  color: #FFFFFF;
+  color: $white-color;
   word-break: normal;
   top: 50%;
   left: 50%;
@@ -1445,7 +1638,7 @@ p {
     width: 100%;
     height: 100%;
     text-decoration: none;
-    color: #005C42;
+    color: $main-color;
   }
 
   @include mq(sm){
@@ -1480,7 +1673,7 @@ p {
     font-weight: bold;
     font-size: 18px;
     letter-spacing: 0.05em;
-    color: #005C42;
+    color: $main-color;
     line-height: 160%;
     display: -webkit-box;
     overflow: hidden;
@@ -1493,7 +1686,7 @@ p {
   font-size: 12px;
   line-height: 160%;
   letter-spacing: 0.06em;
-  color: #005C42;
+  color: $main-color;
   margin-left: 10px;
 }
 
@@ -1534,7 +1727,7 @@ p {
 ===================================*/
 
 .footer{
-  background-color: #005C42;
+  background-color: $main-color;
 }
 
 .footer-content{
@@ -1546,7 +1739,7 @@ p {
     font-size: 15px;
     line-height: 180%;
     letter-spacing: 0.06em;
-    color: #FFFFFF;
+    color: $white-color;
   }
 
   & p {
@@ -1555,7 +1748,7 @@ p {
     font-size: 15px;
     line-height: 180%;
     letter-spacing: 0.06em;
-    color: #FFFFFF;
+    color: $white-color;
   }
 }
 
@@ -1587,7 +1780,7 @@ p {
   width: 148px;
   height: 37px;
   text-align: center;
-  background-color: #FFFFFF;
+  background-color: $white-color;
   font-style: normal;
   font-weight: normal;
   font-size: 13px;
@@ -1606,12 +1799,12 @@ p {
     font-size: 11px;
     line-height: 150%;
     letter-spacing: 0.06em;
-    color: #FFFFFF;
+    color: $white-color;
     margin-top: 30px;
   }
   &__table{
     width: 345px;
-    color: #FFFFFF;
+    color: $white-color;
     & th {
       padding-bottom: 10px;
       padding-right: 10px;
@@ -1651,7 +1844,7 @@ p {
   font-size: 11px;
   line-height: 100%;
   letter-spacing: 0.06em;
-  color: #FFFFFF;
+  color: $white-color;
   margin-top: 33px;
 }
 
@@ -1663,7 +1856,7 @@ p {
   line-height: 100%;
   text-align: center;
   letter-spacing: 0.15em;
-  color: #47937D;
+  color: $light-color;
   margin-top: 20px;
   padding-bottom: 120px;
 }

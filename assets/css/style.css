@@ -17,6 +17,9 @@ ol, ul {
 }
 
 /*===================================
+ * color
+===================================*/
+/*===================================
  * 共通
 ===================================*/
 .is-pc {
@@ -64,7 +67,7 @@ ol, ul {
   font-size: 30px;
   line-height: 180%;
   letter-spacing: 0.06em;
-  color: #005C42;
+  color: #021F59;
 }
 @media screen and (max-width: 599px) {
   .main_title {
@@ -78,7 +81,7 @@ ol, ul {
   font-size: 26px;
   line-height: 160%;
   letter-spacing: 0.06em;
-  color: #005C42;
+  color: #021F59;
 }
 @media screen and (max-width: 767px) {
   .sub_title {
@@ -106,7 +109,7 @@ ol, ul {
 a {
   text-decoration: none;
   transition: all 0.2s;
-  color: #005C42;
+  color: #021F59;
 }
 
 /*===================================
@@ -140,7 +143,7 @@ a {
   border-radius: 60px;
   border-style: solid;
   border-width: 1px;
-  border-color: #B9D8CF;
+  border-color: #072A40;
   transition: all 0.2s;
   line-height: 44px;
   margin-left: auto;
@@ -162,7 +165,7 @@ p {
   font-size: 16px;
   line-height: 160%;
   letter-spacing: 0.06em;
-  color: #005C42;
+  color: #021F59;
 }
 
 /*===================================
@@ -211,10 +214,10 @@ p {
   font-size: 16px;
   line-height: 16px;
   letter-spacing: 0.05em;
-  color: #005C42;
+  color: #021F59;
 }
 .sp-nav__link:hover {
-  color: #005C42;
+  color: #021F59;
 }
 
 .js-close {
@@ -224,7 +227,7 @@ p {
   width: 43px;
   height: 43px;
   border-radius: 50%;
-  background-color: #005C42;
+  background-color: #021F59;
 }
 
 .close__icon img {
@@ -277,20 +280,20 @@ p {
 .page-bottom {
   width: 100%;
   height: 84px;
-  background-color: #00A375;
+  background-color: #011640;
   font-style: normal;
   font-weight: bold;
   font-size: 18px;
   text-align: center;
   letter-spacing: 0.16em;
-  color: #FFFFFF;
+  color: #EBF0F2;
   line-height: 84px;
 }
 .page-bottom a {
   text-decoration: none;
 }
 .page-bottom__text {
-  color: #FFFFFF;
+  color: #EBF0F2;
   font-size: 16px;
 }
 
@@ -305,7 +308,7 @@ p {
 @media screen and (min-width: 768px) {
   #top {
     position: fixed;
-    background-color: #FFFFFF;
+    background-color: #EBF0F2;
     width: 100%;
     z-index: 1;
     top: 0;
@@ -317,7 +320,7 @@ p {
   font-size: 13px;
   line-height: 19px;
   letter-spacing: 0.1em;
-  color: #005C42;
+  color: #021F59;
   margin-bottom: 20px;
 }
 
@@ -337,6 +340,186 @@ p {
 }
 
 /*===================================
+ * slick-slider
+===================================*/
+.slick-slider {
+  position: relative;
+}
+@media screen and (min-width: 1024px) {
+  .slick-slider {
+    margin-top: 100px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .slick-slider {
+    width: 90%;
+  }
+}
+
+.slick-slide {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.mv_slideHeght {
+  height: 700px !important; /* 高さはお好みで設定してください */
+}
+@media screen and (max-width: 767px) {
+  .mv_slideHeght {
+    height: 400px !important;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .slick-slide {
+    margin: 20px;
+  }
+}
+
+.slick-slide img {
+  width: 100%;
+}
+
+.container-front2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-20%, -50%);
+  z-index: 10;
+}
+@media screen and (max-width: 767px) {
+  .container-front2 {
+    top: 35%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.front-contents {
+  margin-top: 30px;
+}
+
+.container-front2 {
+  margin-left: 15px;
+  margin-right: 15px;
+}
+@media screen and (max-width: 767px) {
+  .container-front2 {
+    margin-left: 34px;
+    margin-right: 35px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .container-front2 {
+    width: 830px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+    padding-top: 50px;
+  }
+}
+
+.front-text2 {
+  background-color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.front-text2__main2 {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 31px;
+  line-height: 158%;
+  letter-spacing: 0.02em;
+  color: #021F59;
+  padding-top: 43px;
+}
+@media screen and (max-width: 767px) {
+  .front-text2__main2 {
+    width: 285px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .front-text2__main2 {
+    width: 390px;
+    font-size: 42px;
+    padding-top: 90px;
+  }
+}
+.front-text2__secondary2 {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 191%;
+  letter-spacing: 0.03em;
+  color: #021F59;
+  padding-bottom: 40px;
+}
+
+.highlight2 {
+  background-color: #EBF0F2;
+  color: #021F59;
+  line-height: 150%;
+  display: inline-block;
+  padding: 0 3px;
+  margin: 0 5px 0 0;
+}
+
+.front-button2 {
+  margin-left: auto;
+}
+@media screen and (min-width: 1024px) {
+  .front-button2 {
+    display: block;
+    width: 270px;
+    height: 140px;
+    background-color: #011640;
+    border-radius: 6px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 26px;
+    line-height: 157%;
+    align-items: center;
+    letter-spacing: 0.11em;
+    color: #EBF0F2;
+  }
+}
+.front-button2__link2:hover {
+  text-decoration: none;
+}
+
+.reservation-text2 {
+  display: none;
+}
+@media screen and (min-width: 1024px) {
+  .reservation-text2 {
+    display: block;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 26px;
+    line-height: 157%;
+    width: 174px;
+    word-wrap: break-word;
+    align-items: center;
+    letter-spacing: 0.11em;
+    color: #EBF0F2;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 30px;
+  }
+  .reservation-text2::after {
+    content: "";
+    display: inline-block;
+    background-image: url("/assets/img/arrow.svg");
+    background-size: contain;
+    width: 18px;
+    height: 18px;
+    margin-left: 10px;
+  }
+}
+
+/*===================================
  * header
 ===================================*/
 #top {
@@ -345,12 +528,12 @@ p {
 
 .header {
   margin-top: 96px;
-  background-image: url("https://placehold.jp/24/cc9999/993333/500x50.png");
+  background-image: url("/assets/img/mach_mv.png");
   background-size: cover;
 }
 @media screen and (min-width: 768px) {
   .header {
-    background-image: url("https://placehold.jp/24/cc9999/993333/500x50.png");
+    background-image: url("/assets/img/mach_mv.png");
     background-size: cover;
     height: 396px;
   }
@@ -398,7 +581,7 @@ p {
     line-height: 16px;
     text-align: center;
     letter-spacing: 0.06em;
-    color: #005C42;
+    color: #021F59;
   }
 }
 .container-front {
@@ -430,7 +613,7 @@ p {
   font-size: 31px;
   line-height: 158%;
   letter-spacing: 0.02em;
-  color: #FFFFFF;
+  color: #EBF0F2;
   padding-top: 43px;
 }
 @media screen and (max-width: 767px) {
@@ -451,13 +634,13 @@ p {
   font-size: 15px;
   line-height: 191%;
   letter-spacing: 0.03em;
-  color: #FFFFFF;
+  color: #EBF0F2;
   padding-bottom: 40px;
 }
 
 .highlight {
-  background-color: #FFFFFF;
-  color: #005C42;
+  background-color: #EBF0F2;
+  color: #021F59;
   line-height: 150%;
   display: inline-block;
   padding: 0 3px;
@@ -469,7 +652,7 @@ p {
     display: block;
     width: 270px;
     height: 140px;
-    background-color: #17875F;
+    background-color: #011640;
     border-radius: 6px;
     font-style: normal;
     font-weight: bold;
@@ -477,7 +660,7 @@ p {
     line-height: 157%;
     align-items: center;
     letter-spacing: 0.11em;
-    color: #FFFFFF;
+    color: #EBF0F2;
   }
 }
 .front-button__link:hover {
@@ -498,7 +681,7 @@ p {
     word-wrap: break-word;
     align-items: center;
     letter-spacing: 0.11em;
-    color: #FFFFFF;
+    color: #EBF0F2;
     margin-left: auto;
     margin-right: auto;
     padding-top: 30px;
@@ -519,7 +702,7 @@ p {
 ===================================*/
 .covid19-attention {
   font-weight: bold;
-  border: 5px #005C42 solid;
+  border: 5px #021F59 solid;
   padding: 20px 40px;
   padding: 20px 40px;
   margin: 40px 0;
@@ -649,7 +832,7 @@ p {
   width: 210px;
   height: 210px;
   margin: 17px;
-  background: #005C42;
+  background: #021F59;
   border-radius: 20px;
   margin: 6px;
 }
@@ -696,7 +879,7 @@ p {
   line-height: 140%;
   text-align: center;
   letter-spacing: 0.06em;
-  color: #FFFFFF;
+  color: #EBF0F2;
   margin-top: 16px;
   height: 32px;
   display: flex;
@@ -762,6 +945,8 @@ p {
 .slide img {
   width: 100%;
   height: auto;
+  margin-bottom: 20px;
+  border-radius: 8px;
 }
 
 .slide-title {
@@ -770,8 +955,7 @@ p {
   font-size: 20px;
   line-height: 130%;
   letter-spacing: 0.06em;
-  color: #005C42;
-  position: absolute;
+  color: #021F59;
   bottom: 40px;
   left: 20px;
 }
@@ -782,9 +966,8 @@ p {
   font-size: 12px;
   line-height: 160%;
   letter-spacing: 0.01em;
-  color: #005C42;
+  color: #021F59;
   margin-top: 7px;
-  position: absolute;
   bottom: 20px;
   left: 20px;
 }
@@ -831,7 +1014,7 @@ p {
 @media screen and (min-width: 768px) {
   .step-number__pc {
     display: block;
-    background: #005C42;
+    background: #021F59;
     width: 26px;
     height: 26px;
     border-radius: 50%;
@@ -839,7 +1022,7 @@ p {
     text-align: center;
     font-weight: bold;
     font-size: 14px;
-    color: #FFFFFF;
+    color: #EBF0F2;
     flex: none;
     margin-left: auto;
     margin-right: auto;
@@ -853,7 +1036,7 @@ p {
   }
 }
 .step-number__sp {
-  background: #005C42;
+  background: #021F59;
   width: 26px;
   height: 26px;
   border-radius: 50%;
@@ -861,7 +1044,7 @@ p {
   text-align: center;
   font-weight: bold;
   font-size: 14px;
-  color: #FFFFFF;
+  color: #EBF0F2;
   margin-right: 12px;
   flex: none;
   margin-top: 1px;
@@ -893,7 +1076,7 @@ p {
   font-size: 16px;
   line-height: 160%;
   letter-spacing: 0.06em;
-  color: #005C42;
+  color: #021F59;
 }
 @media screen and (min-width: 768px) {
   .step-text {
@@ -917,7 +1100,7 @@ p {
   font-size: 12px;
   line-height: 150%;
   letter-spacing: 0.06em;
-  color: #005C42;
+  color: #021F59;
   margin-bottom: 13px;
   text-align: center;
 }
@@ -944,7 +1127,7 @@ p {
   font-size: 12px;
   line-height: 150%;
   letter-spacing: 0.06em;
-  color: #005C42;
+  color: #021F59;
   margin-bottom: 13px;
   text-align: center;
   align-items: center;
@@ -958,7 +1141,7 @@ p {
   font-size: 10px;
   line-height: 150%;
   letter-spacing: 0.06em;
-  color: #005C42;
+  color: #021F59;
 }
 
 .schedule-day {
@@ -991,7 +1174,7 @@ p {
   margin-left: 25px;
   line-height: 100%;
   letter-spacing: 0.06em;
-  color: #005C42;
+  color: #021F59;
 }
 .schedule-time__holiday {
   font-size: 22px;
@@ -1013,7 +1196,7 @@ p {
 .schedule-label {
   padding-top: 5px;
   padding-bottom: 5px;
-  background: #B9D8CF;
+  background: #EBF0F2;
   border-radius: 30px;
   display: inline-block;
   text-align: center;
@@ -1054,7 +1237,6 @@ p {
 @media screen and (min-width: 768px) {
   .feature-icon {
     width: 170px;
-    height: 170px;
   }
 }
 
@@ -1065,7 +1247,7 @@ p {
   font-size: 15px;
   line-height: 140%;
   letter-spacing: 0.06em;
-  color: #005C42;
+  color: #021F59;
   margin-top: 12px;
 }
 @media screen and (min-width: 768px) {
@@ -1099,14 +1281,14 @@ p {
   font-style: normal;
   font-weight: bold;
   font-size: 16px;
-  color: #005C42;
+  color: #021F59;
   letter-spacing: 0.06em;
   cursor: pointer;
   display: flex;
   line-height: 130%;
 }
 .question-item:hover {
-  color: #005C42;
+  color: #021F59;
   text-decoration: underline;
 }
 .question-item::before {
@@ -1118,7 +1300,7 @@ p {
   height: 2px;
   /*縦線に*/
   transform: rotate(90deg);
-  background: #005C42;
+  background: #021F59;
   transition: all 0.3s ease-in-out;
 }
 .question-item::after {
@@ -1129,7 +1311,7 @@ p {
   /*横線*/
   width: 15px;
   height: 2px;
-  background: #005C42;
+  background: #021F59;
   transition: all 0.2s ease-in-out;
 }
 .question-item.open::before {
@@ -1140,13 +1322,13 @@ p {
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background-color: #005C42;
+  background-color: #021F59;
   font-style: normal;
   font-weight: bold;
   font-size: 18px;
   line-height: 30px;
   text-align: center;
-  color: #FFFFFF;
+  color: #EBF0F2;
   display: inline-block;
   margin-right: 17px;
   flex: none;
@@ -1172,13 +1354,13 @@ p {
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background-color: #B9D8CF;
+  background-color: #072A40;
   font-style: normal;
   font-weight: bold;
   font-size: 18px;
   line-height: 30px;
   text-align: center;
-  color: #005C42;
+  color: #021F59;
   display: inline-block;
   margin-right: 17px;
   flex: none;
@@ -1194,7 +1376,7 @@ p {
   font-size: 13px;
   line-height: 160%;
   letter-spacing: 0.06em;
-  color: #005C42;
+  color: #021F59;
 }
 
 /*===================================
@@ -1208,7 +1390,7 @@ p {
   font-size: 26px;
   line-height: 180%;
   letter-spacing: 0.06em;
-  color: #005C42;
+  color: #021F59;
 }
 
 @media screen and (min-width: 1024px) {
@@ -1235,7 +1417,7 @@ p {
 }
 .notice-item a:hover {
   text-decoration: underline;
-  color: #005C42;
+  color: #021F59;
   opacity: 0.9;
 }
 .notice-item h3 {
@@ -1244,7 +1426,7 @@ p {
   font-weight: bold;
   font-size: 18px;
   letter-spacing: 0.05em;
-  color: #005C42;
+  color: #021F59;
   word-break: break-all;
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -1261,7 +1443,7 @@ p {
 .notice-date {
   width: 54px;
   height: 54px;
-  background-color: #47937D;
+  background-color: #5F7092;
   border-radius: 5px;
   position: relative;
   flex: none;
@@ -1274,7 +1456,7 @@ p {
   font-weight: bold;
   font-size: x-small;
   letter-spacing: 0.06em;
-  color: #FFFFFF;
+  color: #EBF0F2;
   word-break: normal;
   top: 50%;
   left: 50%;
@@ -1317,7 +1499,7 @@ p {
   width: 100%;
   height: 100%;
   text-decoration: none;
-  color: #005C42;
+  color: #021F59;
 }
 @media screen and (max-width: 767px) {
   .article-item {
@@ -1349,7 +1531,7 @@ p {
   font-weight: bold;
   font-size: 18px;
   letter-spacing: 0.05em;
-  color: #005C42;
+  color: #021F59;
   line-height: 160%;
   display: -webkit-box;
   overflow: hidden;
@@ -1361,7 +1543,7 @@ p {
   font-size: 12px;
   line-height: 160%;
   letter-spacing: 0.06em;
-  color: #005C42;
+  color: #021F59;
   margin-left: 10px;
 }
 
@@ -1395,7 +1577,7 @@ p {
  * footer
 ===================================*/
 .footer {
-  background-color: #005C42;
+  background-color: #021F59;
 }
 
 .footer-content h6 {
@@ -1405,7 +1587,7 @@ p {
   font-size: 15px;
   line-height: 180%;
   letter-spacing: 0.06em;
-  color: #FFFFFF;
+  color: #EBF0F2;
 }
 .footer-content p {
   font-style: normal;
@@ -1413,7 +1595,7 @@ p {
   font-size: 15px;
   line-height: 180%;
   letter-spacing: 0.06em;
-  color: #FFFFFF;
+  color: #EBF0F2;
 }
 
 .footer-logo {
@@ -1444,7 +1626,7 @@ p {
   width: 148px;
   height: 37px;
   text-align: center;
-  background-color: #FFFFFF;
+  background-color: #EBF0F2;
   font-style: normal;
   font-weight: normal;
   font-size: 13px;
@@ -1461,12 +1643,12 @@ p {
   font-size: 11px;
   line-height: 150%;
   letter-spacing: 0.06em;
-  color: #FFFFFF;
+  color: #EBF0F2;
   margin-top: 30px;
 }
 .footer-schedule__table {
   width: 345px;
-  color: #FFFFFF;
+  color: #EBF0F2;
 }
 .footer-schedule__table th {
   padding-bottom: 10px;
@@ -1500,7 +1682,7 @@ p {
   font-size: 11px;
   line-height: 100%;
   letter-spacing: 0.06em;
-  color: #FFFFFF;
+  color: #EBF0F2;
   margin-top: 33px;
 }
 
@@ -1511,7 +1693,7 @@ p {
   line-height: 100%;
   text-align: center;
   letter-spacing: 0.15em;
-  color: #47937D;
+  color: #5F7092;
   margin-top: 20px;
   padding-bottom: 120px;
 }
