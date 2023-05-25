@@ -14,31 +14,56 @@
 
 get_header();
 ?>
+  <script>
+      $(document).ready(function () {
+        var imageUrls = ["<?php echo get_template_directory_uri(); ?>/assets/img/mach_mv.png", "<?php echo get_template_directory_uri(); ?>/assets/img/mach_mv_2.png", "<?php echo get_template_directory_uri(); ?>/assets/img/mach_mv_3.png", "<?php echo get_template_directory_uri(); ?>/assets/img/mach_mv_4.png", "<?php echo get_template_directory_uri(); ?>/assets/img/mach_mv_2.png"];
+        var slider = $(".slick-slider");
 
-<?php
-		while ( have_posts() ) :
-			the_post();
+        imageUrls.forEach(function (url) {
+          slider.append('<div class="slick-slide mv_slideHeght" style="background-image: url(' + url + ')"></div>');
+        });
 
-			get_template_part( 'template-parts/content', get_post_type() );
+        slider.slick({
+          dots: true,
+          infinite: true,
+          speed: 300,
+          slidesToShow: 1,
+          adaptiveHeight: true,
+          autoplay: true,
+          autoplaySpeed: 3000,
+          fade: true,
+          cssEase: "linear",
+        });
+      });
+    </script>
+  <main class="main">
+    <section class="main_mv">
+      <div class="container-front2">
+        <div class="front-text2">
+          <p class="front-text2__main2">駅なかクリニックで<br class="is-sp" />音速で帰ろう</p>
+          <div class="front-text2__secondary2">
+            当院は熱がある、お腹が痛い、鼻水など体に不調のある方が、
+            <span class="highlight2">忙しい日常の合間</span>
+            に気軽に予約・受診できることを目指します。
+          </div>
+        </div>
+        <div class="front-contents">
+          <a href="/reserve-page" class="front-button2__link2">
+            <div class="front-button2">
+              <div class="reservation-text2">・予約する<br />・予約確認</div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="slick-slider" style="overflow: hidden;">
+        <div class="slick-slide mv_slideHeght" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/img/mach_mv.png')"></div>
+      </div>
+    </section>
 
-			the_post_navigation(
-				array(
-					'prev_text' => '<span class="nav-subtitle">' . esc_html__( 'Previous:', 'mach' ) . '</span> <span class="nav-title">%title</span>',
-					'next_text' => '<span class="nav-subtitle">' . esc_html__( 'Next:', 'mach' ) . '</span> <span class="nav-title">%title</span>',
-				)
-			);
-
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
-
-		endwhile; // End of the loop.
-		?>
-    <header class="header">
+    <!-- <header class="header">
       <div class="container-front">
         <div class="front-text">
-          <p class="front-text__main">駅なかクリニックで<br class="is-sp">音速で帰ろう</p>
+          <p class="front-text__main">駅なかクリニックで<br class="is-sp" />音速で帰ろう</p>
           <div class="front-text__secondary">
             当院は熱がある、お腹が痛い、鼻水など体に不調のある方が、
             <span class="highlight">忙しい日常の合間</span>
@@ -51,12 +76,9 @@ get_header();
           </div>
         </a>
       </div>
-    </header>
+    </header> -->
 
-    <main class="main">
-
-
-<section class="container">
+      <section class="container">
         <div class="covid19-attention">
           <p class="attention-title">発熱等、風邪症状のある方</p>
           <p class="attention-text">
@@ -144,8 +166,7 @@ get_header();
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/img/value1@2x.png" width="106" height="106" alt="" />
               </div>
               <div class="value-item__text">
-                <h3 class="sub_title">
-                  紙の診察券なし<br class="is-sp">スマホで受付</h3>
+                <h3 class="sub_title">紙の診察券なし<br class="is-sp" />スマホで受付</h3>
               </div>
             </div>
             <div class="value-item">
@@ -153,9 +174,7 @@ get_header();
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/img/value2@2x.png" width="106" height="106" alt="" />
               </div>
               <div class="value-item__text">
-                <h3 class="sub_title">
-                  キャッシュレス決済OK
-                </h3>
+                <h3 class="sub_title">キャッシュレス決済OK</h3>
               </div>
             </div>
             <div class="value-item">
@@ -164,7 +183,7 @@ get_header();
               </div>
               <div class="value-item__text">
                 <h3 class="sub_title">
-                  診察室を出たら<br class="is-sp">
+                  診察室を出たら<br class="is-sp" />
                   そのまま薬局へ
                 </h3>
               </div>
@@ -188,22 +207,22 @@ get_header();
             <div class="slider-area">
               <div class="full-screen slider">
                 <div class="slide">
-                  <img src="https://placehold.jp/cc9999/993333/640x360.png" alt="125naroom" />
+                  <img src="<?php echo get_template_directory_uri(); ?>/assets/img/features_01.png" alt="125naroom" />
                   <div class="slide-title">小さいけれど安らぐ</div>
                   <div class="slide-description">アフターコロナに相応しく、対人接触の少ない待合室</div>
                 </div>
                 <div class="slide">
-                  <img src="https://placehold.jp/cc9999/993333/640x360.png" alt="125naroom" />
+                  <img src="<?php echo get_template_directory_uri(); ?>/assets/img/features_02.png" alt="125naroom" />
                   <div class="slide-title">忙しい、オフィスワーカーの方向け</div>
                   <div class="slide-description">カンタン予約や事前問診など、時間のムダを省くしくみ</div>
                 </div>
                 <div class="slide">
-                  <img src="https://placehold.jp/cc9999/993333/640x360.png" alt="125naroom" />
+                  <img src="<?php echo get_template_directory_uri(); ?>/assets/img/features_03.png" alt="125naroom" />
                   <div class="slide-title">通院のハードルが低い</div>
                   <div class="slide-description">駅直結のビル内にあって通いやすく、24時間予約できる</div>
                 </div>
                 <div class="slide">
-                  <img src="https://placehold.jp/cc9999/993333/640x360.png" alt="125naroom" />
+                  <img src="<?php echo get_template_directory_uri(); ?>/assets/img/features_04.png" alt="125naroom" />
                   <div class="slide-title">行きたい時間に、行ける</div>
                   <div class="slide-description">ランチタイムにも行ける。土日祝OK。夜も20時まで</div>
                 </div>
@@ -227,9 +246,7 @@ get_header();
                   <div class="step-number__sp">1</div>
                   <div class="step-text">スマホで予約</div>
                 </div>
-                <p class="step-desc">
-                  予約はスマホで簡単に。<br />オンラインのみの受付です。
-                </p>
+                <p class="step-desc">予約はスマホで簡単に。<br />オンラインのみの受付です。</p>
               </div>
             </div>
             <div class="medical-step">
@@ -242,9 +259,7 @@ get_header();
                   <div class="step-number__sp">2</div>
                   <div class="step-text">来院</div>
                 </div>
-                <p class="step-desc">
-                  診療の待ち時間を最少でご案内。院外のカフェなどでもお待ちいただけます。
-                </p>
+                <p class="step-desc">診療の待ち時間を最少でご案内。院外のカフェなどでもお待ちいただけます。</p>
               </div>
             </div>
             <div class="medical-step">
@@ -257,9 +272,7 @@ get_header();
                   <div class="step-number__sp">3</div>
                   <div class="step-text">診察</div>
                 </div>
-                <p class="step-desc">
-                  無駄なく、丁寧な診察を心がけます。必要に応じて、他の医療機関をご紹介します。
-                </p>
+                <p class="step-desc">無駄なく、丁寧な診察を心がけます。必要に応じて、他の医療機関をご紹介します。</p>
               </div>
             </div>
             <div class="medical-step">
@@ -272,9 +285,7 @@ get_header();
                   <div class="step-number__sp">4</div>
                   <div class="step-text">処方箋受付・帰宅</div>
                 </div>
-                <p class="step-desc">
-                  スムーズな薬の受け取りができるよう工夫をしています。
-                </p>
+                <p class="step-desc">スムーズな薬の受け取りができるよう工夫をしています。</p>
               </div>
             </div>
           </div>
@@ -513,7 +524,8 @@ get_header();
           <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/TRbt9JSfOrQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
         </div>
       </section>
-    </main>
+  </main>
+
 		<footer class="footer">
       <div class="container inner">
         <div class="footer-content">
@@ -570,7 +582,6 @@ get_header();
         </div>
       </div>
     </footer>
-
     <script>
       jQuery(".accordion-content").css("display", "none");
       jQuery(function ($) {

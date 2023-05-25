@@ -1,0 +1,19 @@
+<script>
+  $(".js-spmenu").on("click", function () {
+    $(".spmenu").addClass("is-open");
+  });
+  $(".js-close").on("click", function () {
+    $(".spmenu").removeClass("is-open");
+  });
+  $(function () {
+    var scrollPosition;
+    $(".js-spmenu").on("click", function () {
+      scrollPosition = $(window).scrollTop();
+      $("body").addClass("fixed").css({ top: -scrollPosition });
+    });
+    $(".js-close").on("click", function () {
+      $("body").removeClass("fixed").css({ top: 0 });
+      window.scrollTo(0, scrollPosition);
+    });
+  });
+</script>

@@ -65,9 +65,9 @@
     </div>
     <div class="footer-box">
       <div class="footer__flex">
-        <div class="menu-toggle js-spmenu"><img src="https://placehold.jp/150x150.png" /></div>
+        <div class="menu-toggle js-spmenu"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/menu.png" /></div>
         <div class="page-bottom">
-          <a href="#" class="page-bottom__link">
+          <a href="/reserve-page" class="page-bottom__link">
             <div class="page-bottom__text">予約枠を確認・予約する</div>
           </a>
         </div>
@@ -77,11 +77,10 @@
     <script>
       $(".js-spmenu").on("click", function () {
         $(".sp-menu").addClass("is_open");
-
       });
-      $(".sp-menu").on("click", function () {
+      $(".js-close").on("click", function () {
         $(".sp-menu").removeClass("is_open");
-        $(".sp-menu").style.display = "none";
+        // $(".sp-menu").style.display = "none";
       });
       $(function () {
         var scrollPosition;

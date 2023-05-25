@@ -1,125 +1,51 @@
-<!DOCTYPE html>
-<html lang="ja">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<?php
+/**
+ * The main template file
+ *
+ * This is the most generic template file in a WordPress theme
+ * and one of the two required files for a theme (the other being style.css).
+ * It is used to display a page when nothing more specific matches a query.
+ * E.g., it puts together the home page when no home.php file exists.
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ *
+ * @package mach
+ */
 
-    <!-- フロートbtn フォント -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.4/css/all.css" />
-    <link rel="stylesheet" href="/assets//css/style.css" />
+get_header();
+?>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<?php
+		while ( have_posts() ) :
+			the_post();
 
-    <!-- =========カルーセル＝＝＝＝＝＝＝＝ -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <!-- ＝＝＝＝＝＝＝カルーセル＝＝＝＝＝＝ -->
+			get_template_part( 'template-parts/content', get_post_type() );
 
-    <script defer src="/assets/js/main.js"></script>
+			the_post_navigation(
+				array(
+					'prev_text' => '<span class="nav-subtitle">' . esc_html__( 'Previous:', 'mach' ) . '</span> <span class="nav-title">%title</span>',
+					'next_text' => '<span class="nav-subtitle">' . esc_html__( 'Next:', 'mach' ) . '</span> <span class="nav-title">%title</span>',
+				)
+			);
 
-    <title>マッハGoGoクリニック</title>
-    <meta name="description" content="" />
+			// If comments are open or we have at least one comment, load up the comment template.
+			if ( comments_open() || get_comments_number() ) :
+				comments_template();
+			endif;
 
-    <!-- <link rel="dns-prefetch" href="https://maxcdn.bootstrapcdn.com" /> -->
-    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-
-    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js?ver=6.2" id="bootstrap-js-js"></script>
-  </head>
-  <body>
-    <div class="sp-menu">
-      <div class="sp-menu__container">
-        <a href="index.html" class="sp-nav__logo-link">
-          <div class="sp-nav__logo">
-            <img src="https://placehold.jp/240x23.png" width="240" height="23" alt="ロゴの画像" />
-          </div>
-        </a>
-        <ul class="sp-nav__list">
-          <li class="sp-nav__item"><a href="#" class="sp-nav__link">クリニックTOP</a></li>
-          <li class="sp-nav__item"><a href="#" class="sp-nav__link">診療内容</a></li>
-          <li class="sp-nav__item"><a href="#" class="sp-nav__link">よくある質問</a></li>
-          <li class="sp-nav__item"><a href="#" class="sp-nav__link">お知らせ</a></li>
-          <li class="sp-nav__item"><a href="#" class="sp-nav__link">お役立ち記事</a></li>
-          <li class="sp-nav__item"><a href="#" class="sp-nav__link">アクセス</a></li>
-          <li class="sp-nav__item"><a href="#" class="sp-nav__link">お問い合わせ</a></li>
-        </ul>
-        <div class="close js-close">
-          <span class="close__icon"><img src="/assets/img/batu.svg" /></span>
-        </div>
-      </div>
-    </div>
-    <div class="footer-box">
-      <div class="footer__flex">
-        <div class="menu-toggle js-spmenu"><img src="./assets/img/menu.png" /></div>
-        <div class="page-bottom">
-          <a href="#" class="page-bottom__link">
-            <div class="page-bottom__text">予約枠を確認・予約する</div>
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <section id="top">
-      <div class="container-header__nav">
-        <div class="header__flex">
-          <div class="header-logo">
-            <a href="/" class="header-logo__link">
-              <div class="top-logo__box">
-                <div><img src="https://placehold.jp/240x23.png" width="240" height="23" alt="ロゴの画像" /></div>
-              </div>
-            </a>
-            <h5 class="header__address">兵庫県西脇市黒田庄123-5 大国神社前</h5>
-          </div>
-          <div class="header-navigation">
-            <ul class="header-nav__list">
-              <li class="header-nav__item"><a href="#" class="header-nav__link">診療内容</a></li>
-              <li class="header-nav__item"><a href="#" class="header-nav__link">よくある質問</a></li>
-              <li class="header-nav__item"><a href="#" class="header-nav__link">お知らせ</a></li>
-              <li class="header-nav__item"><a href="#" class="header-nav__link">お役立ち記事</a></li>
-              <li class="header-nav__item"><a href="#" class="header-nav__link">アクセス</a></li>
-              <li class="header-nav__item"><a href="#" class="header-nav__link">お問い合わせ</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-  <main class="main">
-    <section class="main_mv">
-      <div class="container-front2">
-        <div class="front-text2">
-          <p class="front-text2__main2">駅なかクリニックで<br class="is-sp" />音速で帰ろう</p>
-          <div class="front-text2__secondary2">
-            当院は熱がある、お腹が痛い、鼻水など体に不調のある方が、
-            <span class="highlight2">忙しい日常の合間</span>
-            に気軽に予約・受診できることを目指します。
-          </div>
-        </div>
-        <div class="front-contents">
-          <a href="#" class="front-button2__link2">
-            <div class="front-button2">
-              <div class="reservation-text2">・予約する<br />・予約確認</div>
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="slick-slider">
-        <div class="slick-slide mv_slideHeght" style="background-image: url('/assets/img/mach_mv.png')"></div>
-      </div>
-    </section>
-
+		endwhile; // End of the loop.
+		?>
     <header class="header">
       <div class="container-front">
         <div class="front-text">
-          <p class="front-text__main">駅なかクリニックで<br class="is-sp" />音速で帰ろう</p>
+          <p class="front-text__main">駅なかクリニックで<br class="is-sp">音速で帰ろう</p>
           <div class="front-text__secondary">
             当院は熱がある、お腹が痛い、鼻水など体に不調のある方が、
             <span class="highlight">忙しい日常の合間</span>
             に気軽に予約・受診できることを目指します。
           </div>
         </div>
-        <a href="#" class="front-button__link">
+        <a href="/reserve-page" class="front-button__link">
           <div class="front-button">
             <div class="reservation-text">・予約する<br />・予約確認</div>
           </div>
@@ -127,7 +53,10 @@
       </div>
     </header>
 
-      <section class="container">
+    <main class="main">
+
+
+<section class="container">
         <div class="covid19-attention">
           <p class="attention-title">発熱等、風邪症状のある方</p>
           <p class="attention-text">
@@ -140,11 +69,11 @@
           <div class="border"></div>
           <div class="reservation-box">
             <div class="background-image">
-              <img src="/assets/img/svg_box.svg" alt="予約セル表" class="background-image-cell" />
-              <div class="status"><img src="/assets/img/status03.svg" alt="9:00-12:00" /></div>
-              <div class="status"><img src="/assets/img/status03.svg" alt="12:00-14:00" /></div>
-              <div class="status"><img src="/assets/img/status03.svg" alt="15:00-19:00" /></div>
-              <div class="status"><img src="/assets/img/status03.svg" alt="19:00-20:00" /></div>
+              <img src="<?php echo get_template_directory_uri(); ?>/assets/img/svg_box.svg" alt="予約セル表" class="background-image-cell" />
+              <div class="status"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/status03.svg" alt="9:00-12:00" /></div>
+              <div class="status"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/status03.svg" alt="12:00-14:00" /></div>
+              <div class="status"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/status03.svg" alt="15:00-19:00" /></div>
+              <div class="status"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/status03.svg" alt="19:00-20:00" /></div>
             </div>
           </div>
         </div>
@@ -157,7 +86,7 @@
             <div class="medical-content__item">
               <a href="#">
                 <div class="item-content">
-                  <div class="item-content__img"><img src="/assets/img/internal@2x.png" width="72" height="72" alt="" /></div>
+                  <div class="item-content__img"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/internal@2x.png" width="72" height="72" alt="" /></div>
                   <div class="item-content__text">一般内科<br />（風邪・花粉症など）</div>
                 </div>
               </a>
@@ -165,7 +94,7 @@
             <div class="medical-content__item">
               <a href="#">
                 <div class="item-content">
-                  <div class="item-content__img"><img src="/assets/img/oclep.png" width="72" height="72" alt="" /></div>
+                  <div class="item-content__img"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/oclep.png" width="72" height="72" alt="" /></div>
                   <div class="item-content__text">ピル</div>
                 </div>
               </a>
@@ -173,7 +102,7 @@
             <div class="medical-content__item">
               <a href="#">
                 <div class="item-content">
-                  <div class="item-content__img"><img src="/assets/img/fim.png" width="72" height="72" alt="" /></div>
+                  <div class="item-content__img"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/fim.png" width="72" height="72" alt="" /></div>
                   <div class="item-content__text">月経・妊娠・オリモノ</div>
                 </div>
               </a>
@@ -181,7 +110,7 @@
             <div class="medical-content__item">
               <a href="#">
                 <div class="item-content">
-                  <div class="item-content__img"><img src="/assets/img/prevention@2x.png" width="72" height="72" alt="" /></div>
+                  <div class="item-content__img"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/prevention@2x.png" width="72" height="72" alt="" /></div>
                   <div class="item-content__text">HPVワクチン<br />(子宮頸がんワクチン)</div>
                 </div>
               </a>
@@ -189,7 +118,7 @@
             <div class="medical-content__item">
               <a href="#">
                 <div class="item-content">
-                  <div class="item-content__img"><img src="/assets/img/gynecology@2x.png" width="72" height="72" alt="" /></div>
+                  <div class="item-content__img"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/gynecology@2x.png" width="72" height="72" alt="" /></div>
                   <div class="item-content__text">ブライダルチェック</div>
                 </div>
               </a>
@@ -197,7 +126,7 @@
             <div class="medical-content__item">
               <a href="#">
                 <div class="item-content">
-                  <div class="item-content__img"><img src="/assets/img/ec.png" width="72" height="72" alt="" /></div>
+                  <div class="item-content__img"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/ec.png" width="72" height="72" alt="" /></div>
                   <div class="item-content__text">アフターピル</div>
                 </div>
               </a>
@@ -212,34 +141,37 @@
           <div class="value-container">
             <div class="value-item">
               <div class="value-item__img">
-                <img src="/assets/img/value1@2x.png" width="106" height="106" alt="" />
-              </div>
-              <div class="value-item__text">
-                <h3 class="sub_title">紙の診察券なし<br class="is-sp" />スマホで受付</h3>
-              </div>
-            </div>
-            <div class="value-item">
-              <div class="value-item__img">
-                <img src="/assets/img/value2@2x.png" width="106" height="106" alt="" />
-              </div>
-              <div class="value-item__text">
-                <h3 class="sub_title">キャッシュレス決済OK</h3>
-              </div>
-            </div>
-            <div class="value-item">
-              <div class="value-item__img">
-                <img src="/assets/img/value3@2x.png" width="106" height="106" alt="" />
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/value1@2x.png" width="106" height="106" alt="" />
               </div>
               <div class="value-item__text">
                 <h3 class="sub_title">
-                  診察室を出たら<br class="is-sp" />
+                  紙の診察券なし<br class="is-sp">スマホで受付</h3>
+              </div>
+            </div>
+            <div class="value-item">
+              <div class="value-item__img">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/value2@2x.png" width="106" height="106" alt="" />
+              </div>
+              <div class="value-item__text">
+                <h3 class="sub_title">
+                  キャッシュレス決済OK
+                </h3>
+              </div>
+            </div>
+            <div class="value-item">
+              <div class="value-item__img">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/value3@2x.png" width="106" height="106" alt="" />
+              </div>
+              <div class="value-item__text">
+                <h3 class="sub_title">
+                  診察室を出たら<br class="is-sp">
                   そのまま薬局へ
                 </h3>
               </div>
             </div>
             <div class="value-item">
               <div class="value-item__img">
-                <img src="/assets/img/value4@2x.png" width="106" height="106" alt="" />
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/value4@2x.png" width="106" height="106" alt="" />
               </div>
               <div class="value-item__text">
                 <h3 class="sub_title">薬局とも待ち時間削減の連携が可能に</h3>
@@ -256,22 +188,22 @@
             <div class="slider-area">
               <div class="full-screen slider">
                 <div class="slide">
-                  <img src="./assets/img/features_01.png" alt="125naroom" />
+                  <img src="https://placehold.jp/cc9999/993333/640x360.png" alt="125naroom" />
                   <div class="slide-title">小さいけれど安らぐ</div>
                   <div class="slide-description">アフターコロナに相応しく、対人接触の少ない待合室</div>
                 </div>
                 <div class="slide">
-                  <img src="./assets/img/features_02.png" alt="125naroom" />
+                  <img src="https://placehold.jp/cc9999/993333/640x360.png" alt="125naroom" />
                   <div class="slide-title">忙しい、オフィスワーカーの方向け</div>
                   <div class="slide-description">カンタン予約や事前問診など、時間のムダを省くしくみ</div>
                 </div>
                 <div class="slide">
-                  <img src="./assets/img/features_03.png" alt="125naroom" />
+                  <img src="https://placehold.jp/cc9999/993333/640x360.png" alt="125naroom" />
                   <div class="slide-title">通院のハードルが低い</div>
                   <div class="slide-description">駅直結のビル内にあって通いやすく、24時間予約できる</div>
                 </div>
                 <div class="slide">
-                  <img src="./assets/img/features_04.png" alt="125naroom" />
+                  <img src="https://placehold.jp/cc9999/993333/640x360.png" alt="125naroom" />
                   <div class="slide-title">行きたい時間に、行ける</div>
                   <div class="slide-description">ランチタイムにも行ける。土日祝OK。夜も20時まで</div>
                 </div>
@@ -288,53 +220,61 @@
             <div class="medical-step">
               <div class="step-number__pc">1</div>
               <div class="step-number__pc-box">
-                <img src="assets/img/medical1@2x.png" width="106" height="85" alt="" class="img" />
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/medical1@2x.png" width="106" height="85" alt="" class="img" />
               </div>
               <div class="step-content">
                 <div class="step-title">
                   <div class="step-number__sp">1</div>
                   <div class="step-text">スマホで予約</div>
                 </div>
-                <p class="step-desc">予約はスマホで簡単に。<br />オンラインのみの受付です。</p>
+                <p class="step-desc">
+                  予約はスマホで簡単に。<br />オンラインのみの受付です。
+                </p>
               </div>
             </div>
             <div class="medical-step">
               <div class="step-number__pc">2</div>
               <div class="step-number__pc-box">
-                <img src="assets/img/medical1@2x.png" width="106" height="85" alt="" class="img" />
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/medical1@2x.png" width="106" height="85" alt="" class="img" />
               </div>
               <div class="step-content">
                 <div class="step-title">
                   <div class="step-number__sp">2</div>
                   <div class="step-text">来院</div>
                 </div>
-                <p class="step-desc">診療の待ち時間を最少でご案内。院外のカフェなどでもお待ちいただけます。</p>
+                <p class="step-desc">
+                  診療の待ち時間を最少でご案内。院外のカフェなどでもお待ちいただけます。
+                </p>
               </div>
             </div>
             <div class="medical-step">
               <div class="step-number__pc">3</div>
               <div class="step-number__pc-box">
-                <img src="assets/img/medical1@2x.png" width="106" height="85" alt="" class="img" />
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/medical1@2x.png" width="106" height="85" alt="" class="img" />
               </div>
               <div class="step-content">
                 <div class="step-title">
                   <div class="step-number__sp">3</div>
                   <div class="step-text">診察</div>
                 </div>
-                <p class="step-desc">無駄なく、丁寧な診察を心がけます。必要に応じて、他の医療機関をご紹介します。</p>
+                <p class="step-desc">
+                  無駄なく、丁寧な診察を心がけます。必要に応じて、他の医療機関をご紹介します。
+                </p>
               </div>
             </div>
             <div class="medical-step">
               <div class="step-number__pc">4</div>
               <div class="step-number__pc-box">
-                <img src="assets/img/medical1@2x.png" width="106" height="85" alt="" class="img" />
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/medical1@2x.png" width="106" height="85" alt="" class="img" />
               </div>
               <div class="step-content">
                 <div class="step-title">
                   <div class="step-number__sp">4</div>
                   <div class="step-text">処方箋受付・帰宅</div>
                 </div>
-                <p class="step-desc">スムーズな薬の受け取りができるよう工夫をしています。</p>
+                <p class="step-desc">
+                  スムーズな薬の受け取りができるよう工夫をしています。
+                </p>
               </div>
             </div>
           </div>
@@ -358,19 +298,19 @@
           </div>
           <div class="features-list">
             <div class="feature-item">
-              <div class="feature-icon"><img src="/assets/img/icon1.png" width="88" height="88" /></div>
+              <div class="feature-icon"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/icon1.png" width="88" height="88" /></div>
               <div class="feature-text">
                 <h5>ランチタイム<br />診療OK</h5>
               </div>
             </div>
             <div class="feature-item">
-              <div class="feature-icon"><img src="/assets/img/icon2.png" width="88" height="88" /></div>
+              <div class="feature-icon"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/icon2.png" width="88" height="88" /></div>
               <div class="feature-text">
                 <h5>土日・祝日<br />診療OK</h5>
               </div>
             </div>
             <div class="feature-item">
-              <div class="feature-icon"><img src="/assets/img/icon3.png" width="88" height="88" /></div>
+              <div class="feature-icon"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/icon3.png" width="88" height="88" /></div>
               <div class="feature-text">
                 <h5>18時以降<br />診療OK</h5>
               </div>
@@ -573,9 +513,8 @@
           <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/TRbt9JSfOrQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
         </div>
       </section>
-  </main>
-
-    <footer class="footer">
+    </main>
+		<footer class="footer">
       <div class="container inner">
         <div class="footer-content">
           <div class="footer-logo">
@@ -632,5 +571,25 @@
       </div>
     </footer>
 
+    <script>
+      jQuery(".accordion-content").css("display", "none");
+      jQuery(function ($) {
+        jQuery(".js-accordion-title").on("click", function () {
+          jQuery(this).next().slideToggle(200);
+          jQuery(this).toggleClass("open", 200);
+        });
+      });
+      $(document).on("ready", function () {
+        $(".full-screen").slick({ centerMode: true, centerPadding: "5%", dots: true, autoplay: true, autoplaySpeed: 2800, infinite: true, pauseOnFocus: false, pauseOnHover: false });
+      });
+    </script>
+
+		<?php wp_footer(); ?>
+
   </body>
 </html>
+
+
+<?php
+// get_sidebar();
+// get_footer();

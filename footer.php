@@ -54,7 +54,6 @@
         </div>
       </div>
     </footer>
-
     <script>
       jQuery(".accordion-content").css("display", "none");
       jQuery(function ($) {
@@ -67,7 +66,6 @@
         $(".full-screen").slick({ centerMode: true, centerPadding: "5%", dots: true, autoplay: true, autoplaySpeed: 2800, infinite: true, pauseOnFocus: false, pauseOnHover: false });
       });
     </script>
-
 		<?php wp_footer(); ?>
 
   </body>
