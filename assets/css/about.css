@@ -81,6 +81,9 @@ ol, ul {
   justify-content: space-around;
   text-align: center;
 }
+.im__icon--container a:hover {
+  transform: scale(1.3);
+}
 .im__icon--container a .im-icon {
   height: 100%;
   padding: 10px;
