@@ -6,6 +6,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
+  scroll-behavior: smooth;
 }
 
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
@@ -38,6 +39,15 @@ ol, ul {
   .is-sp {
     display: none;
   }
+}
+
+.anchorarea {
+  position: relative;
+}
+
+.lp_anchor {
+  position: absolute;
+  top: -101px;
 }
 
 .container {
@@ -85,6 +95,23 @@ ol, ul {
 }
 @media screen and (max-width: 767px) {
   .sub_title {
+    font-size: 20px;
+  }
+}
+
+.p-sub__title {
+  margin-top: 75px;
+  margin-bottom: 16px;
+  text-align: center;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 160%;
+  letter-spacing: 0.06em;
+  color: #021F59;
+}
+@media screen and (max-width: 767px) {
+  .p-sub__title {
     font-size: 20px;
   }
 }
@@ -1578,6 +1605,7 @@ p {
 ===================================*/
 .footer {
   background-color: #021F59;
+  margin-top: 120px;
 }
 
 .footer-content h6 {
