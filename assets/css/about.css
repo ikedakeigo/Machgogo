@@ -19,6 +19,18 @@ ol, ul {
 /*===================================
  * color
 ===================================*/
+/*===================================
+ * font
+===================================*/
+h6 {
+  font-style: normal;
+  font-weight: bold;
+  line-height: 150%;
+  letter-spacing: 0.06em;
+  color: rgba(153, 153, 153, 0.6);
+  margin-bottom: 5px;
+}
+
 .inner_links {
   max-width: 400px;
   width: 100%;

@@ -45,3 +45,16 @@ $sub-color: #072A40;
 $btn-color: #011640;
 $light-color: #5F7092;
 $white-color: #EBF0F2;
+
+/*===================================
+ * font
+===================================*/
+
+h6{
+  font-style: normal;
+  font-weight: bold;
+  line-height: 150%;
+  letter-spacing: 0.06em;
+  color: #9999;
+  margin-bottom: 5px;
+}
