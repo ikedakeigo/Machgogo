@@ -4,6 +4,9 @@
  * 共通
 ===================================*/
 
+.text-center{
+  text-align: center;
+}
 
 .is-pc{
   display: none;
@@ -106,6 +109,7 @@ a{
   transition: all 0.2s;
   color: $main-color;
 }
+
 
 /*===================================
  * margin padding
