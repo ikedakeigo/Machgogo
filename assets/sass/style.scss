@@ -155,18 +155,38 @@ a{
 .button-wrapper{
   text-align: center;
 }
+
 /*===================================
- * 文字
+ * リンクボタン
 ===================================*/
 
-p {
-  font-style: normal;
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 160%;
-  letter-spacing: 0.06em;
-  color: $main-color;
+.ma_out01{
+  & span{
+    &::after{
+    content: url("/assets/img/ico_newwindow_01.png");
+    margin-left: 2px;
+  }
+
+  }
 }
+
+.ma_listMark01{
+  position: relative;
+  display: block;
+  padding-left: 15px;
+  font-size: 13px;
+  font-weight: bold;
+  &::before{
+    content: url("/assets/img/ico_arrow_right02.png");
+    top: 0.9em;
+    left: 0;
+    margin-top: -0.5em;
+    display: block;
+    position: absolute;
+    line-height: 1;
+  }
+}
+
 
 /*===================================
  * sp-menu

@@ -33,6 +33,27 @@ h6 {
 }
 
 /*===================================
+ * 文字
+===================================*/
+p {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 160%;
+  letter-spacing: 0.06em;
+  color: #021F59;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+/*===================================
+ * smGird
+===================================*/
+.smGrid {
+  font-size: 12px;
+}
+
+/*===================================
  * 共通
 ===================================*/
 .text-center {
@@ -200,15 +221,28 @@ a {
 }
 
 /*===================================
- * 文字
+ * リンクボタン
 ===================================*/
-p {
-  font-style: normal;
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 160%;
-  letter-spacing: 0.06em;
-  color: #021F59;
+.ma_out01 span::after {
+  content: url("/assets/img/ico_newwindow_01.png");
+  margin-left: 2px;
+}
+
+.ma_listMark01 {
+  position: relative;
+  display: block;
+  padding-left: 15px;
+  font-size: 13px;
+  font-weight: bold;
+}
+.ma_listMark01::before {
+  content: url("/assets/img/ico_arrow_right02.png");
+  top: 0.9em;
+  left: 0;
+  margin-top: -0.5em;
+  display: block;
+  position: absolute;
+  line-height: 1;
 }
 
 /*===================================
