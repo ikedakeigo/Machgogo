@@ -215,6 +215,11 @@ a {
   margin-top: 23px;
   padding: 0 30px;
 }
+.button:hover {
+  background-color: #072A40;
+  color: #EBF0F2;
+  transition: all 0.2s;
+}
 
 .button-wrapper {
   text-align: center;

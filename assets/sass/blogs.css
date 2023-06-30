@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   margin: 0;
   padding: 0;
@@ -29,6 +30,27 @@ h6 {
   letter-spacing: 0.06em;
   color: rgba(153, 153, 153, 0.6);
   margin-bottom: 5px;
+}
+
+/*===================================
+ * 文字
+===================================*/
+p {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 160%;
+  letter-spacing: 0.06em;
+  color: #021F59;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+/*===================================
+ * smGird
+===================================*/
+.smGrid {
+  font-size: 12px;
 }
 
 .blog-header {
@@ -192,6 +214,7 @@ h6 {
 .category_tag a {
   font-style: normal;
   font-weight: bold;
+  line-height: 62px;
   font-size: 15px;
   padding-left: 21px;
   letter-spacing: 0.06em;
@@ -203,5 +226,93 @@ h6 {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+}
+
+/*===================================
+ * blog
+===================================*/
+.blogTop-img {
+  margin-top: 100px;
+}
+.blogTop-img img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.s-blog__date {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 150%;
+  letter-spacing: 0.05em;
+  color: #999999;
+  margin-bottom: 25px;
+}
+.s-blog__category {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 160%;
+  letter-spacing: 0.06em;
+  color: #021F59;
+}
+.s-blog__title {
+  margin-bottom: 16px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 26px;
+  line-height: 180%;
+  letter-spacing: 0.06em;
+  color: #021F59;
+}
+.s-blog__content {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 160%;
+  letter-spacing: 0.06em;
+  color: #021F59;
+}
+.s-blog__content ol {
+  list-style-type: decimal;
+  counter-reset: li;
+}
+.s-blog__content ol > li:not(:last-child) {
+  margin-bottom: 35px;
+}
+.s-blog__content ol > li {
+  position: relative;
+  padding-left: 36px;
+  list-style: none;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+.s-blog__content ol > li::before {
+  position: absolute;
+  top: 4px;
+  left: 0;
+  padding: 0px 6px;
+  margin-left: 5px;
+  border-radius: 100%;
+  font-weight: bold;
+  color: #FFFFFF;
+  background: #021F59;
+  line-height: 1.4;
+  counter-increment: li;
+  content: counter(li);
+}
+.s-blog__boxTitle {
+  margin-top: 50px;
+  margin-bottom: 20px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 180%;
+  letter-spacing: 0.06em;
+  color: #021F59;
+}
+.blog-title {
+  font-size: 30px;
 }
 /*# sourceMappingURL=blogs.css.map */
