@@ -329,3 +329,57 @@
 .blog-heading{
 
 }
+
+
+/*===================================
+ * category
+===================================*/
+
+.archive-head {
+	padding: 28px 0 0;
+}
+
+.archive-head.m_description {
+	// margin-bottom: 30px;
+}
+
+.archive-lead {
+	color: $main-color;
+	font-family: "Lato", sans-serif;
+	font-size: 14px;
+	font-weight: 700;
+	margin-bottom: 6px;
+}
+
+.archive-title {
+	font-size: 26px;
+	font-weight: 600;
+	margin-bottom: 18px;
+}
+
+.archive-title.m_category::before {
+	color: $main-color;
+	content: "\f02d";
+	font-family: "Font Awesome 5 Free", sans-serif;
+	font-size: 26px;
+	font-weight: 900;
+	margin-right: 8px;
+}
+
+.archive-title.m_search span {
+	color: $main-color;
+}
+
+.archive-title.m_search::before {
+	color: $main-color;
+	content: "\f002";
+	font-family: "Font Awesome 5 Free", sans-serif;
+	font-size: 26px;
+	font-weight: 900;
+	margin-right: 8px;
+}
+
+.archive-description {
+	font-size: 14px;
+	line-height: 1.4;
+}
