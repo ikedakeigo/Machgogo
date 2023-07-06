@@ -1,9 +1,13 @@
 @use 'base' as *;
 
 .blog-header{
-  width: 1000px;
+  max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
+  @include mq(sm){
+    margin-left: 20px;
+    margin-right: 20px;
+  }
 }
 
 .blog_hed{
@@ -13,6 +17,10 @@
   background-image: url(/assets/img/blogs/blog_top.png);
   background-size: cover;
   border-radius: 20px;
+  @include mq(sm){
+    margin-top: 20px;
+    display: block;
+  }
 
   &__text{
     margin-left: 19px;
@@ -21,7 +29,13 @@
     font-weight: bold;
     // line-height: 160%;
     color: $white-color;
-    width:  650px;
+
+    @include mq(lg){
+      width:  650px;
+    }
+    @include mq(sm){
+      // width: 100%;
+    }
   }
 
   &__title{
@@ -30,6 +44,11 @@
     padding-top: 240px;
     text-align: start;
     padding-left: 20px;
+    @include mq(sm){
+      width: 290px;
+      padding-top: 120px;
+      font-size: 21px;
+    }
   }
 
   & .btn2 {
@@ -49,7 +68,9 @@
     background: $main-color;
     color: #ffff;
     margin-top: 300px;
-
+    @include mq(sm){
+      margin-top: 13px;
+    }
     & .arrow img{
       position: absolute;
       top: 50%;
@@ -63,17 +84,26 @@
 .container-blog{
   max-width: 1000px;
   margin: 0 auto;
+  @include mq(sm){
+    margin-left: 20px;
+    margin-right: 20px;
+  }
 }
 
 .blog-contents{
   display: flex;
-  margin-left: auto;
-  margin-right: auto;
   width: 1000px;
+  @include mq(sm){
+    width: 100%;
+    display: block;
+  }
 }
 
 .blog-content{
   width: 60%;
+  @include mq(sm){
+    width: 100%;
+  }
 }
 
 
@@ -106,6 +136,11 @@
       height: 151px;
       object-fit: cover;
       border-radius: 10px;
+      @include mq(sm){
+        width: 106px;
+        height: 85px;
+        border-radius: 7px
+      }
     }
   }
 
@@ -123,6 +158,9 @@
       line-height: 160%;
       letter-spacing: 0.06rem;
       color: $main-color;
+      @include mq(sm){
+        font-size: 18px;
+      }
     }
 
     & .category{
@@ -143,8 +181,14 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  @include mq(sm){
+    display: block;
+  }
   &__box{
     width: calc(50% - 15px);
+    @include mq(sm){
+      width: 100%;
+    }
     &:not(:last-child){
       margin-bottom: 30px;
     }
@@ -183,6 +227,9 @@
 
   margin-left: 105px;
   margin-bottom: 0;
+  @include mq(sm){
+    margin-left: 0;
+  }
 }
 
 .category_tag{
@@ -320,6 +367,10 @@
 
 .blog-title {
   font-size: 30px;
+  font-weight: bold;
+  @include mq(sm){
+    font-size: 22px;
+  }
 }
 
 .blog-content{
